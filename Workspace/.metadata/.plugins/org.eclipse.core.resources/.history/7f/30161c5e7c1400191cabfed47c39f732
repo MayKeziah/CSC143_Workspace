@@ -1,0 +1,13 @@
+public class Shark extends Critter{
+    public Direction getMove() {
+    	
+    }
+	
+    public boolean eat(){
+    
+    }
+    public Attack fight(String opponent){
+        
+    }
+
+}

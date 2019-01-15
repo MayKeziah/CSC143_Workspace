@@ -1,0 +1,56 @@
+import java.util.Arrays;
+
+public class TestAlgorithms {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public boolean contains(int[] a1, int[] a2, int index) {
+		boolean toReturn = false;
+		while (index <= a1.length - a2.length) {
+			while (a1[index] != a2[0]) {
+				index++;
+			}
+			if (Arrays.equals(Arrays.copyOfRange(a1, index, index + a2.length - 1),  a2)) {
+				toReturn = true;
+			}
+			else {
+				index++;
+				return contains(a1, a2, index);
+			}
+		}
+		return toReturn;
+	}
+	public boolean contains(int[] a1, int[] a2) {
+		return contains(a1, a2, 0);
+	}
+	
+	public int mode(int[] myList) {
+		int length = myList.length;
+		int currentValue = myList[0];
+		int currentCount = 1;
+		int highestCountValue = currentValue;
+		int highestValueCount = 0;
+		for (int i = 1; i < length; i++) {
+			if (i == (length - 1)) {
+				if (currentCount > highestValueCount) {
+					highestValueCount = currentCount;
+				}
+			}
+			if (myList[i] == currentValue) {
+				currentCount++;
+			}
+			else {
+				if(currentCount > highestValueCount) {
+					highestValueCount = currentCount;
+					highestCountValue = myList[i-1];
+				}
+				currentCount = 1;
+				currentValue = myList[i];
+			}
+		}
+		return highestCountValue;
+	}
+
+}

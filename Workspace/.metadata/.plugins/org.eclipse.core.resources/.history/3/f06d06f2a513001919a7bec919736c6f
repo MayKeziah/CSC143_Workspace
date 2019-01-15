@@ -1,0 +1,28 @@
+
+public class TestAlgorithms {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public int mode(int[] myList) {
+		int length = myList.length;
+		int currentValue = myList[0];
+		int currentCount = 1;
+		int highestCountValue = currentValue;
+		int highestValueCount = 0;
+		for (int i = 1; i < length; i++) {
+			if (i == (length - 1)) {
+				if (currentCount > highestValueCount) {
+					highestValueCount = currentCount;
+				}
+			}
+			if (myList[i] == currentValue) {
+				currentCount++;
+			}
+			
+		}
+	}
+
+}

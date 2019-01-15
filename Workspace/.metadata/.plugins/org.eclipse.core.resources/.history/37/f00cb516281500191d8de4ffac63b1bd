@@ -1,0 +1,123 @@
+/**
+ * 
+ */
+package tests;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.jupiter.api.Test;
+
+import plane.Line;
+
+/**
+ * @author Unknown
+ *
+ */
+class LineTest {
+
+	/**
+	 * Test method for {@link plane.Line#Line()}.
+	 */
+	@Test
+	void testLine() {
+		assertNotNull(new Line(), "New Line object is not Null: ");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#Line(int, int, int, int)}.
+	 */
+	@Test
+	void testLineIntIntIntInt() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#Line(plane.Point, plane.Point)}.
+	 */
+	@Test
+	void testLinePointPoint() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#getP1()}.
+	 */
+	@Test
+	void testGetP1() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#getP2()}.
+	 */
+	@Test
+	void testGetP2() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#isCollinear(plane.Point)}.
+	 */
+	@Test
+	void testIsCollinear() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#magnitude()}.
+	 */
+	@Test
+	void testMagnitude() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#setEndPoints(plane.Point, plane.Point)}.
+	 */
+	@Test
+	void testSetEndPoints() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#setP1(plane.Point)}.
+	 */
+	@Test
+	void testSetP1() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#setP2(plane.Point)}.
+	 */
+	@Test
+	void testSetP2() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#slope()}.
+	 */
+	@Test
+	void testSlope() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#toString()}.
+	 */
+	@Test
+	void testToString() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#translate(int, int)}.
+	 */
+	@Test
+	void testTranslate() {
+		fail("Not yet implemented");
+	}
+
+}

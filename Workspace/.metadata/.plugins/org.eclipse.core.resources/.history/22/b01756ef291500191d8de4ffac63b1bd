@@ -1,0 +1,145 @@
+/**
+ * 
+ */
+package tests;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
+
+import plane.Line;
+import plane.Point;
+
+/**
+ * @author Unknown
+ *
+ */
+class LineTest {
+
+	/**
+	 * Test method for {@link plane.Line#Line()}.
+	 */
+	@Test
+	void testLine() {
+		Line myLine = new Line();
+		assertNotNull(myLine, "New Line object is not Null: ");
+		assertEquals(myLine.getP1().getX(), 0);
+		assertEquals(myLine.getP1().getY(), 0);
+		assertEquals(myLine.getP2().getX(), 1);
+		assertEquals(myLine.getP2().getY(), 1);
+	}
+
+	/**
+	 * Test method for {@link plane.Line#Line(int, int, int, int)}.
+	 */
+	@Test
+	void testLineIntIntIntInt() {
+		Line myLine = new Line(1, 2, 3, 4);
+		assertNotNull(myLine, "New Line object is not Null: ");
+		assertEquals(myLine.getP1().getX(), 1);
+		assertEquals(myLine.getP1().getY(), 2);
+		assertEquals(myLine.getP2().getX(), 3);
+		assertEquals(myLine.getP2().getY(), 4);
+	}
+
+	/**
+	 * Test method for {@link plane.Line#Line(plane.Point, plane.Point)}.
+	 */
+	@Test
+	void testLinePointPoint() {
+		Line myLine = new Line(new Point(3, 4), new Point(5, 6));
+		assertNotNull(myLine, "New Line object is not Null: ");
+		assertEquals(myLine.getP1().getX(), 3);
+		assertEquals(myLine.getP1().getY(), 4);
+		assertEquals(myLine.getP2().getX(), 5);
+		assertEquals(myLine.getP2().getY(), 6);
+	}
+
+	/**
+	 * Test method for {@link plane.Line#getP1()}.
+	 */
+	@Test
+	void testGetP1() {
+		Point myPoint = new Point(2, 3);
+		Line myLine = new Line(myPoint, new Point());
+		assertSame(myLine.getP1(), myPoint);
+	}
+
+	/**
+	 * Test method for {@link plane.Line#getP2()}.
+	 */
+	@Test
+	void testGetP2() {
+		Point myPoint = new Point(2, 3);
+		Line myLine = new Line(new Point(), myPoint);
+		assertSame(myLine.getP2(), myPoint);	}
+
+	/**
+	 * Test method for {@link plane.Line#isCollinear(plane.Point)}.
+	 */
+	@Test
+	void testIsCollinear() {
+		Line myLine = new Line();
+		assertTrue(myLine.isCollinear(new Point(2, 2)), "[(0, 0) , (1, 1) , (2, 2)] are Collinear");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#magnitude()}.
+	 */
+	@Test
+	void testMagnitude() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#setEndPoints(plane.Point, plane.Point)}.
+	 */
+	@Test
+	void testSetEndPoints() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#setP1(plane.Point)}.
+	 */
+	@Test
+	void testSetP1() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#setP2(plane.Point)}.
+	 */
+	@Test
+	void testSetP2() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#slope()}.
+	 */
+	@Test
+	void testSlope() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#toString()}.
+	 */
+	@Test
+	void testToString() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link plane.Line#translate(int, int)}.
+	 */
+	@Test
+	void testTranslate() {
+		fail("Not yet implemented");
+	}
+
+}
