@@ -4,6 +4,7 @@
 package numTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 import org.junit.jupiter.api.Test;
 
@@ -88,7 +89,7 @@ class ComplexTest {
 		division = testNum.divide(temp);
 		}
 		catch (ArithmeticException Z) {
-			System.out.println("Test /0.0 throw success:\n\t" + Z);
+			System.out.println("Test /0.0 throw success:\n" + Z);
 		}
 		}
 

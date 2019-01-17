@@ -4,6 +4,7 @@
 package numTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 import org.junit.jupiter.api.Test;
 
@@ -88,7 +89,7 @@ class ComplexTest {
 		division = testNum.divide(temp);
 		}
 		catch (ArithmeticException Z) {
-			System.out.println("Test /0.0 throw success:\n\t" + Z);
+			System.out.println("Test /0.0 throw success");
 		}
 		}
 
@@ -146,10 +147,11 @@ class ComplexTest {
 	@Test
 	void testToString() {
 	testNum = new Complex(10, 5);
-	assertEquals("(10.0 + 5.0i)", testNum.toString(), "toString() value of complex(10, 5) equals " + testNum.toString());
-	//imaginaryPart() == zero
+	System.out.println(testNum.toString());
+	assertSame("(10.0 + 5.0i)", testNum.toString(), "toString() value of complex(10, 5) equals " + testNum.toString());
 	testNum = new Complex();
-	assertEquals("(0.0)", testNum.toString(), "toString() value of complex() equals " + testNum.toString());
+	System.out.println(testNum.toString());
+	assertSame("(0.0)", testNum.toString(), "toString() value of complex() equals " + testNum.toString());
 
 	
 	}

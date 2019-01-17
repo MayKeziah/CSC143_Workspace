@@ -4,5 +4,6 @@
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="plane.Line"/>
 <fullyQualifiedTypeName name="plane.Point"/>
+<fullyQualifiedTypeName name="numbers.Complex"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
