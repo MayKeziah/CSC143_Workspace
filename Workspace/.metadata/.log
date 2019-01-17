@@ -231,3 +231,30 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2019-01-17 12:56:36.170
+!MESSAGE Full project indexing required:
+  [+] C:\Users\E\Downloads\sortMe\eclipse-java-2018-09-win32-x86_64\eclipse\plugins\org.apiguardian_1.0.0.v20180327-1502.jar
+  [+] C:\Users\E\Downloads\sortMe\eclipse-java-2018-09-win32-x86_64\eclipse\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar
+  [+] C:\Users\E\Downloads\sortMe\eclipse-java-2018-09-win32-x86_64\eclipse\plugins\org.junit.jupiter.api_5.1.0.v20180327-1502.jar
+  [+] C:\Users\E\Downloads\sortMe\eclipse-java-2018-09-win32-x86_64\eclipse\plugins\org.junit.jupiter.engine_5.1.0.v20180327-1502.jar
+  [+] C:\Users\E\Downloads\sortMe\eclipse-java-2018-09-win32-x86_64\eclipse\plugins\org.junit.jupiter.migrationsupport_5.1.0.v20180327-1502.jar
+  [+] C:\Users\E\Downloads\sortMe\eclipse-java-2018-09-win32-x86_64\eclipse\plugins\org.junit.jupiter.params_5.1.0.v20180327-1502.jar
+  [+] C:\Users\E\Downloads\sortMe\eclipse-java-2018-09-win32-x86_64\eclipse\plugins\org.junit.platform.commons_1.1.0.v20180327-1502.jar
+  [+] C:\Users\E\Downloads\sortMe\eclipse-java-2018-09-win32-x86_64\eclipse\plugins\org.junit.platform.engine_1.1.0.v20180327-1502.jar
+  [+] C:\Users\E\Downloads\sortMe\eclipse-java-2018-09-win32-x86_64\eclipse\plugins\org.junit.platform.launcher_1.1.0.v20180327-1502.jar
+  [+] C:\Users\E\Downloads\sortMe\eclipse-java-2018-09-win32-x86_64\eclipse\plugins\org.junit.platform.runner_1.1.0.v20180327-1502.jar
+  [+] C:\Users\E\Downloads\sortMe\eclipse-java-2018-09-win32-x86_64\eclipse\plugins\org.junit.platform.suite.api_1.1.0.v20180327-1502.jar
+  [+] C:\Users\E\Downloads\sortMe\eclipse-java-2018-09-win32-x86_64\eclipse\plugins\org.junit.vintage.engine_5.1.0.v20180327-1502.jar
+  [+] C:\Users\E\Downloads\sortMe\eclipse-java-2018-09-win32-x86_64\eclipse\plugins\org.junit_4.12.0.v201504281640\junit.jar
+  [+] C:\Users\E\Downloads\sortMe\eclipse-java-2018-09-win32-x86_64\eclipse\plugins\org.opentest4j_1.0.0.v20180327-1502.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:169)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
