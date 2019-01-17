@@ -61,9 +61,9 @@ class ComplexTest {
 	@Test
 	void testCompareTo() {
 		testNum = new Complex(1, 1);
-		assertEquals(1, testNum.compareTo(1.0), "Compare sqrt(2) == 1.414... to 1.0");
-		assertEquals(-1, testNum.compareTo(2.0), "Compare sqrt(2) == 1.414... to 2.0");
-		assertEquals(0, testNum.compareTo(Math.sqrt(2)), "Compare sqrt(2) == 1.414... to 1.0");
+		assertEquals(1, testNum.compareTo(new Complex()), "Compare sqrt(2) == 1.414... to 1.0");
+		assertEquals(-1, testNum.compareTo(new Complex(2, 2)), "Compare sqrt(2) == 1.414... to 2.0");
+		assertEquals(0, testNum.compareTo(testNum), "Compare sqrt(2) == 1.414... to 1.0");
 
 		}
 

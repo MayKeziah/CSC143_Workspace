@@ -1,6 +1,6 @@
 package numbers;
 
-public class Complex implements Comparable<Double>{
+public class Complex implements Comparable<Complex>{
 	private double im, re;
 
 	/**
@@ -42,11 +42,11 @@ public class Complex implements Comparable<Double>{
 	 * @return an integer representing whether this number is less than (-1), 
 	 * greater than (1), or equal to (0) the given number
 	 * */
-	public int compareTo(Double object) {
-		if (abs() > object) {
+	public int compareTo(Complex object) {
+		if (abs() > object.abs()) {
 			return 1;
 		}
-		else if (abs() < object) {
+		else if (abs() < object.abs()) {
 			return -1;
 		}
 		else {
