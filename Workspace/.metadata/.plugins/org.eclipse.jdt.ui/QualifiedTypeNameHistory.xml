@@ -6,4 +6,5 @@
 <fullyQualifiedTypeName name="plane.Point"/>
 <fullyQualifiedTypeName name="numbers.Complex"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>

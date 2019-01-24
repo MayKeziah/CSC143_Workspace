@@ -38,7 +38,7 @@
 		<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\Problem1\javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="true" key="use"/>
-		<item value="true" key="author"/>
+		<item value="false" key="author"/>
 		<item value="false" key="nodeprecated"/>
 		<item value="false" key="nonavbar"/>
 		<item value="" key="docletpath"/>
@@ -55,6 +55,11 @@
 			<section name="TestStuff">
 				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\TestStuff\javadoc.xml" key="antpath"/>
 				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\TestStuff\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="L2_GenericLab">
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L2_GenericLab\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L2_GenericLab\doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 			<section name="Problem1">
