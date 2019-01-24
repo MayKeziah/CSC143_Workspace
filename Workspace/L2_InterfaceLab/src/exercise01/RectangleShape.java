@@ -12,7 +12,10 @@ import javafx.scene.text.Text;
  * <p> Lab 02 Exercise 01
  * 	   This class defines the attributes of a Rectangle shape.
  ************************************************************************/
-public class RectangleShape {
+public class RectangleShape implements Comparable<RectangleShape>,
+									   Drawable,
+									   Moveable,
+									   Writeable{
 
 	private double    x,  y;
 	private double    height, width;
@@ -55,7 +58,7 @@ public class RectangleShape {
 	 *   compares to Rectangle shapes.
 	 *   @return comparison
 	 * ******************************************/
-	public int functionA(RectangleShape r) {
+	public int compareTo(RectangleShape r) {
 		
 		if(pixelArea() > r.pixelArea()) {
 			return 1;
@@ -68,7 +71,7 @@ public class RectangleShape {
 	/********************************************
 	 *   functionB rectangle on display pane.
 	 * ******************************************/
-	public void functionB(Pane pane) {
+	public void draw(Pane pane) {
 		rectangle = new Rectangle(x, y, width, height);
 		rectangle.setFill(Color.RED);
 		pane.getChildren().add(rectangle);
@@ -93,7 +96,7 @@ public class RectangleShape {
 	/********************************************
 	 *   move rectangle to location specified.
 	 * ******************************************/
-	public void functionC(double dx, double dy) {
+	public void move(double dx, double dy) {
 		// adjust location
 		x += dx;				   // x + dx
 		y += dy;				   // y + dy
@@ -104,7 +107,7 @@ public class RectangleShape {
 	/********************************************
 	 *   writes text on the display pane.
 	 * ******************************************/
-	public void functionD(Pane pane) {
+	public void write(Pane pane) {
 		text      = new Text(x, y + 1.5 * height, 
 				             "\n Rectangle Description: "  
 				             + "\n pixel Area : " + pixelArea()

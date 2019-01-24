@@ -13,7 +13,7 @@ import javafx.scene.text.Text;
  * 	    This class is used to create graphical components on a
  *      graphical layout with features of a Pane layout. 
  ************************************************************************/
-public class DisplayPane extends Pane {
+public class DisplayPane extends Pane, Drawable, Moveable, Writeable {
 	
 	/************************************
 	 * data fields: encapsulation of data

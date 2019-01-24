@@ -32,10 +32,10 @@ public class GUIWindow extends Application {
 		//create a rectangle using Rectangle Shape
 		RectangleShape rect1 = new RectangleShape(200, 100);
 		RectangleShape rect2 = new RectangleShape(100, 200);
-		rect1.functionB(pane);
-		rect1.functionD(pane);
-		rect2.functionB(pane);
-		rect2.functionC(300, 0);
+		rect1.draw(pane);
+		rect1.write(pane);
+		rect2.draw(pane);
+		rect2.move(300, 0);
 		
 		/**********************************************************
 		 * required:  Scene
