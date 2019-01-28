@@ -72,7 +72,8 @@ public class InnerPane extends Pane{
 		 *   have been detected.
 		 * *****************************************************************/
 		public void handle(MouseEvent event) {
-			//place implementation here (response to mouse movements)
+			move(event);
+
 		}
 	}
 	

@@ -42,7 +42,7 @@ public class KeyLambda extends Pane{
 		 *  use a lambda expression to move the square shape with 
 		 *  arrow keys.
 		 * ***************************************************************/
-		// (4) write the lambda expression for setOnKeyPressed to move.
+		setOnKeyPressed(e -> move(e));
 		
 		/**********************************************
 		 * 	focus  key strokes on Rectangle shape.

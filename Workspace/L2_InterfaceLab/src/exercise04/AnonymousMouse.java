@@ -42,7 +42,7 @@ public class AnonymousMouse extends Pane{
 		 * ******************************************************/
 		setOnMouseEntered( new EventHandler<MouseEvent>(){
 			public void handle(MouseEvent event) {
-				 // (1) set background color to lime green
+				setStyle("-fx-background-color: lime green;");
 				}
 		} );
 		
@@ -52,7 +52,7 @@ public class AnonymousMouse extends Pane{
 		 * ******************************************************/
 		setOnMouseExited( new EventHandler<MouseEvent>(){
 			public void handle(MouseEvent event) {
-				 // (2) set background color to red
+				setStyle("-fx-background-color: red;");
 				}
 		} );
 		
@@ -65,7 +65,7 @@ public class AnonymousMouse extends Pane{
 		 * ********************************************/
 		square.setOnMouseMoved( new EventHandler<MouseEvent>(){
 			public void handle(MouseEvent event) {
-				// (3) move square when mouse moves
+				move(event);
 			}
 		}  );
 		

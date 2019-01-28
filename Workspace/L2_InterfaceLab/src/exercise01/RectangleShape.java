@@ -69,7 +69,7 @@ public class RectangleShape implements Comparable<RectangleShape>,
 	}
 	
 	/********************************************
-	 *   functionB rectangle on display pane.
+	 *   draw rectangle on display pane.
 	 * ******************************************/
 	public void draw(Pane pane) {
 		rectangle = new Rectangle(x, y, width, height);

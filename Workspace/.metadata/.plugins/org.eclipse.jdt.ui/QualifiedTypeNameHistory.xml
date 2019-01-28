@@ -7,4 +7,7 @@
 <fullyQualifiedTypeName name="numbers.Complex"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="exercise01.Drawable"/>
+<fullyQualifiedTypeName name="exercise01.Moveable"/>
+<fullyQualifiedTypeName name="exercise01.Writeable"/>
 </qualifiedTypeNameHistroy>

@@ -47,7 +47,7 @@ public class AnonymousKey extends Pane{
 		 * ********************************************/
 		square.setOnKeyPressed( new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
-				 // (4) move square when arrow keys are pressed.
+				 move(event);
 			}
 		} );
 		

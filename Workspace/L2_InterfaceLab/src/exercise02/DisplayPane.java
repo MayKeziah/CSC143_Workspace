@@ -1,5 +1,8 @@
 package exercise02;
 
+import exercise01.Drawable;
+import exercise01.Moveable;
+import exercise01.Writeable;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -13,7 +16,7 @@ import javafx.scene.text.Text;
  * 	    This class is used to create graphical components on a
  *      graphical layout with features of a Pane layout. 
  ************************************************************************/
-public class DisplayPane extends Pane, Drawable, Moveable, Writeable {
+public class DisplayPane extends Pane implements Drawable, Moveable, Writeable {
 	
 	/************************************
 	 * data fields: encapsulation of data
@@ -42,7 +45,7 @@ public class DisplayPane extends Pane, Drawable, Moveable, Writeable {
 	/********************************************
 	 *   draw rectangle on display pane.
 	 * ******************************************/
-	public void functionA(Pane pane) {
+	public void draw(Pane pane) {
 		rectangle = new Rectangle(x, y, width, height);
 		rectangle.setFill(Color.YELLOW);
 		pane.getChildren().add(rectangle);
@@ -51,7 +54,7 @@ public class DisplayPane extends Pane, Drawable, Moveable, Writeable {
 	/********************************************
 	 *   move rectangle to location specified.
 	 * ******************************************/
-	public void functionB(double dx, double dy) {
+	public void move(double dx, double dy) {
 		// adjust location
 		x += dx;				   // x + dx
 		y += dy;				   // y + dy
@@ -63,7 +66,7 @@ public class DisplayPane extends Pane, Drawable, Moveable, Writeable {
 	/********************************************
 	 *   writes text on the display pane.
 	 * ******************************************/
-	public void functionC(Pane pane) {
+	public void write(Pane pane) {
 		text  = new Text(x, y + 1.5 * height, 
 				         "\n Rectangle Description: "  
 				         + "\n pixel Area : " 

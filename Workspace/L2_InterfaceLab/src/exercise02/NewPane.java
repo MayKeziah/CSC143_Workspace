@@ -13,7 +13,7 @@ import javafx.scene.text.Text;
  * 	    This class is used to create graphical components on a
  *      graphical layout with features of a Pane layout. 
  ************************************************************************/
-public class NewPane extends Pane {
+public class NewPane extends Pane implements Sizeable{
 	/************************************
 	 * data fields: encapsulation of data
 	 * **********************************/
@@ -39,7 +39,7 @@ public class NewPane extends Pane {
 	/********************************************
 	 *   draw rectangle on display pane.
 	 * ******************************************/
-	public void functionA(Pane pane) {
+	public void draw(Pane pane) {
 		rectangle = new Rectangle(x, y, width, height);
 		rectangle.setFill(Color.YELLOW);
 		pane.getChildren().add(rectangle);
@@ -48,7 +48,7 @@ public class NewPane extends Pane {
 	/********************************************
 	 *   move rectangle to location specified.
 	 * ******************************************/
-	public void functionB(double dx, double dy) {
+	public void move(double dx, double dy) {
 		// adjust location
 		x += dx;				   // x + dx
 		y += dy;				   // y + dy
@@ -60,7 +60,7 @@ public class NewPane extends Pane {
 	/********************************************
 	 *   resize rectangle by given factor.
 	 * ******************************************/
-	public void functionC(double factor) {
+	public void resize(double factor) {
 		rectangle.setWidth(factor * width);
 		rectangle.setHeight(factor * height);
 	}
@@ -68,7 +68,7 @@ public class NewPane extends Pane {
 	/********************************************
 	 *   writes text on the display pane.
 	 * ******************************************/
-	public void functionD(Pane pane) {
+	public void write(Pane pane) {
 		text  = new Text(x, y + 1.5 * height, 
 				         "\n Rectangle Description: "  
 				         + "\n pixel Area : " 
