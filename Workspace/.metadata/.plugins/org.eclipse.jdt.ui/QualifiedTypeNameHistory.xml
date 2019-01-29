@@ -10,4 +10,5 @@
 <fullyQualifiedTypeName name="exercise01.Drawable"/>
 <fullyQualifiedTypeName name="exercise01.Moveable"/>
 <fullyQualifiedTypeName name="exercise01.Writeable"/>
+<fullyQualifiedTypeName name="org.junit.jupiter.api.function.Executable"/>
 </qualifiedTypeNameHistroy>

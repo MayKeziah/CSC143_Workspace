@@ -132,11 +132,33 @@ class LineTest {
 		myLine = new Line();
 		assertEquals(1, myLine.slope());
 		
-		//Test: Invalid Slope, dx == 0
+		//Test: line to have invalid slope, dx == 0
 		myLine = new Line(0, 1, 0, 3);
-
+		
+		//Test: invalid slope using inner class
+		Executable executable = new Executable() {
+			public void execute() throws ArithmeticException{
+				myLine.slope();
+			}
+		};
+		assertThrows(ArithmeticException.class, executable);
+		
+		//Test: Invalid slope using anonymous inner class as parameter
+		assertThrows(ArithmeticException.class, new Executable() {
+			public void execute() throws ArithmeticException{
+				myLine.slope();
+			}
+		});
+		//Test: invalid slope with lambda
 		assertThrows(ArithmeticException.class, () -> myLine.slope());
 
+		//Test: invalid slope with no valid test method
+		try {
+			myLine.slope();
+		}
+		catch(ArithmeticException e) {
+			System.out.println(e);
+		}
 	}
 
 	/**
