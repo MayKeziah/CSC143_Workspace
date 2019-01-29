@@ -7,9 +7,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import plane.Line;
 import plane.Point;
@@ -34,6 +36,15 @@ class LineTest {
 		assertEquals(myLine.getP1().getY(), 0);
 		assertEquals(myLine.getP2().getX(), 1);
 		assertEquals(myLine.getP2().getY(), 1);
+	}
+	
+	/**
+	 * Test associated with Problem II
+	 */
+	@Test
+	void testLineException() {
+		assertThrows(ArithmeticException.class, () -> {int b = 5/0; System.out.println(b);});
+//		assertThrows(IllegalArgumentException.class, () -> {int b = 5/0; System.out.println(b);});		
 	}
 
 	/**
@@ -120,13 +131,12 @@ class LineTest {
 	void testSlope() {
 		myLine = new Line();
 		assertEquals(1, myLine.slope());
+		
+		//Test: Invalid Slope, dx == 0
 		myLine = new Line(0, 1, 0, 3);
-		try {
-			myLine.slope();
-		}
-		catch(ArithmeticException e) {
-			System.out.println(e);
-		}
+
+		assertThrows(ArithmeticException.class, () -> myLine.slope());
+
 	}
 
 	/**

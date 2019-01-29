@@ -91,7 +91,24 @@ class ComplexTest {
 			System.out.println("Test /0.0 throw success:\n\t" + Z);
 		}
 		}
-
+	/**
+	 * Test method for {@link numbers.Complex#imaginaryPart(numbers.Complex)}.
+	 */
+	@Test
+	void testimaginaryPart() {
+		testNum = new Complex(1, 1);
+		assertEquals(1.0, testNum.imaginaryPart(), "The imaginary part equals zero with a default constructor");
+	}
+	
+	/**
+	 * Test method for {@link numbers.Complex#realPart(numbers.Complex)}.
+	 */
+	@Test
+	void testrealPart() {
+		testNum = new Complex(1, 1);
+		assertEquals(1.0, testNum.realPart(), "The real part equals zero with a default constructor");
+	}
+	
 	/**
 	 * Test method for {@link numbers.Complex#minus(numbers.Complex)}.
 	 */
