@@ -4,6 +4,7 @@
 package numTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -84,7 +85,7 @@ class ComplexTest {
 		//division by zero
 		testNum  = new Complex(2, 4);
 		temp 	 = new Complex();
-		
+		assertThrows(ArithmeticException.class, () -> testNum.divide(temp));
 		try {
 		division = testNum.divide(temp);
 		}
