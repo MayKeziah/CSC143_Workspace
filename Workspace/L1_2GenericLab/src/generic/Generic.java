@@ -1,6 +1,9 @@
 package generic;
 
-public class Generic<T> implements GenericFace{
+/**
+ * Generic<T>: a class to store data of various type.
+ * */
+public class Generic<T>{
 	
 	private T data;
 	

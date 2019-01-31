@@ -1,5 +1,8 @@
 package plane;
 
+/**
+ * Line: a class to represent a line segment
+ * */
 public class Line {
 	
 	private Point p1; //Represents one location in coordinate space.

@@ -84,6 +84,7 @@ class ComplexTest {
 		//division by zero
 		testNum  = new Complex(2, 4);
 		temp 	 = new Complex();
+		
 		try {
 		division = testNum.divide(temp);
 		}
@@ -98,15 +99,6 @@ class ComplexTest {
 	void testimaginaryPart() {
 		testNum = new Complex(1, 1);
 		assertEquals(1.0, testNum.imaginaryPart(), "The imaginary part equals zero with a default constructor");
-	}
-	
-	/**
-	 * Test method for {@link numbers.Complex#realPart(numbers.Complex)}.
-	 */
-	@Test
-	void testrealPart() {
-		testNum = new Complex(1, 1);
-		assertEquals(1.0, testNum.realPart(), "The real part equals zero with a default constructor");
 	}
 	
 	/**
@@ -140,6 +132,15 @@ class ComplexTest {
 												  + testNum.toString() + " plus "
 												  + temp.toString());				
 		}
+
+	/**
+	 * Test method for {@link numbers.Complex#realPart(numbers.Complex)}.
+	 */
+	@Test
+	void testrealPart() {
+		testNum = new Complex(1, 1);
+		assertEquals(1.0, testNum.realPart(), "The real part equals zero with a default constructor");
+	}
 
 	/**
 	 * Test method for {@link numbers.Complex#times(numbers.Complex)}.

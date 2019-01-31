@@ -39,7 +39,7 @@
 	<section name="javadoc">
 		<item value="public" key="access"/>
 		<item value="false" key="noindex"/>
-		<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\Problem1\javadoc.xml" key="antpath"/>
+		<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L1_2GenericLab\javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="true" key="use"/>
 		<item value="false" key="author"/>
@@ -53,7 +53,7 @@
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\JavaDocs\Problem1" key="destdir"/>
+		<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\JavaDocs" key="destdir"/>
 		<item value="false" key="openinbrowser"/>
 		<section name="projects">
 			<section name="TestStuff">
@@ -61,19 +61,24 @@
 				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\TestStuff\doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
-			<section name="L2_GenericLab">
-				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L2_GenericLab\javadoc.xml" key="antpath"/>
-				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L2_GenericLab\doc" key="destdir"/>
-				<item value="" key="href"/>
-			</section>
 			<section name="Problem1">
 				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\Problem1\javadoc.xml" key="antpath"/>
-				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\JavaDocs\Problem1" key="destdir"/>
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\JavaDocs" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="L1_2GenericLab">
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L1_2GenericLab\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\JavaDocs" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 			<section name="L1_ObjectLab">
 				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L1_ObjectLab\javadoc.xml" key="antpath"/>
-				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\JavaDocs\ObjectLab" key="destdir"/>
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\JavaDocs" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="L2_InterfaceLab">
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L2_InterfaceLab\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L2_InterfaceLab\doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 		</section>

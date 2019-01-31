@@ -1,5 +1,8 @@
 package numbers;
 
+/**
+ * Complex: a class to represent complex numbers
+ * */
 public class Complex implements Comparable<Complex>{
 	private double im, re;
 
