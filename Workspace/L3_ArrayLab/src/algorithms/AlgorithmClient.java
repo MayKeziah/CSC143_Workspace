@@ -1,5 +1,5 @@
 /**
- * 
+ * AlgorithmClient: Designed to practice understanding of algorithms used to transverse and edit given arrays. 
  */
 package algorithms;
 
