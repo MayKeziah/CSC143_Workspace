@@ -41,6 +41,17 @@ public class AlgorithmClient {
 				+ "\nExpected: 15");
 		System.out.println("\n---------------------------------------------------------------");
 		
+		/**
+		 * @test for AlgorithmClient.oddSum(int n)
+		 */
+		System.out.print("---------------------------------------------------------------"
+				+ "\nTesting oddSum(n):"
+				+ "\n   Input: n = 5"
+				+ "\n  Output: ");
+		System.out.print(oddSum(5)
+				+ "\nExpected: 25");
+		System.out.println("\n---------------------------------------------------------------");
+		
 		
 		// TODO Auto-generated method stub
 
@@ -94,11 +105,17 @@ public class AlgorithmClient {
 	}
 	
 	/**
+	 * oddSum: computes the sum of the first n positive odd integers.
 	 * 
-	 * 
+	 * @param n the number of odd integers to sum.
+	 * @return the sum of the first n positive odd integers
 	 * */
-	public static int factorial(int n) {
-		
+	public static int oddSum(int n) {
+		if(n <=0) { //n = zero || invalid input
+			return 0;
+		}else {
+			return n * 2 - 1 + oddSum(n-1);
+		}
 	}
 	
 	/**
