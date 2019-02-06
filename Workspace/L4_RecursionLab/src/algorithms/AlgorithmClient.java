@@ -52,6 +52,17 @@ public class AlgorithmClient {
 				+ "\nExpected: 25");
 		System.out.println("\n---------------------------------------------------------------");
 		
+		/**
+		 * @test for AlgorithmClient.base2(int n)
+		 */
+		System.out.print("---------------------------------------------------------------"
+				+ "\nTesting base2(n):"
+				+ "\n   Input: n = 5"
+				+ "\n  Output: ");
+		System.out.print(base2(5)
+				+ "\nExpected: 32");
+		System.out.println("\n---------------------------------------------------------------");
+		
 		
 		// TODO Auto-generated method stub
 
@@ -119,11 +130,19 @@ public class AlgorithmClient {
 	}
 	
 	/**
+	 * base2: computes 2^n for a positive integer n
 	 * 
-	 * 
+	 * @param n the positive integer exponent to raise 2 to
+	 * @return the value of 2 to the power of the positive integer n
 	 * */
-	public static int factorial(int n) {
-		
+	public static int base2(int n) {
+		if(n < 0) { //invalid input
+			return 0;
+		}if(n == 0) { //special case
+			return 1;
+		}else { //recursive call
+			return 2 * base2(n-1);
+		}
 	}
 	
 	/**
