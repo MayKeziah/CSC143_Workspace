@@ -63,6 +63,17 @@ public class AlgorithmClient {
 				+ "\nExpected: 32");
 		System.out.println("\n---------------------------------------------------------------");
 		
+		/**
+		 * @test for AlgorithmClient.pow(double x, int n)
+		 */
+		System.out.print("---------------------------------------------------------------"
+				+ "\nTesting pow(double x, int n):"
+				+ "\n   Input: x = e, n = 5"
+				+ "\n  Output: ");
+		System.out.print(pow(Math.E, 5)
+				+ "\nExpected: 148.413...");
+		System.out.println("\n---------------------------------------------------------------");
+		
 		
 		// TODO Auto-generated method stub
 
@@ -140,17 +151,30 @@ public class AlgorithmClient {
 			return 0;
 		}if(n == 0) { //special case
 			return 1;
+		}if(n == 1){
+			return 2;
 		}else { //recursive call
 			return 2 * base2(n-1);
 		}
 	}
 	
 	/**
+	 * pow: computes x^n for real number x and positive integer n.
 	 * 
-	 * 
+	 * @param x the real base number to be raised to a power
+	 * @param n the positive integer exponent to raise x to
+	 * @return the value of x to the power of n
 	 * */
-	public static int factorial(int n) {
-		
+	public static double pow(double x, int n) {
+		if(n < 0) { //invalid input
+			return 0;
+		}if(n == 0) { //special case
+			return 1;
+		}if(n == 1){
+			return x;
+		}else { //recursive call
+			return x * pow(x, n-1);
+		}
 	}
 	
 	/**
