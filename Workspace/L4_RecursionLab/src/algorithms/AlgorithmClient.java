@@ -73,10 +73,6 @@ public class AlgorithmClient {
 		System.out.print(pow(Math.E, 5)
 				+ "\nExpected: 148.413...");
 		System.out.println("\n---------------------------------------------------------------");
-		
-		
-		// TODO Auto-generated method stub
-
 	}
 	
 	/**
@@ -175,13 +171,5 @@ public class AlgorithmClient {
 		}else { //recursive call
 			return x * pow(x, n-1);
 		}
-	}
-	
-	/**
-	 * 
-	 * 
-	 * */
-	public static int factorial(int n) {
-		
 	}
 }
