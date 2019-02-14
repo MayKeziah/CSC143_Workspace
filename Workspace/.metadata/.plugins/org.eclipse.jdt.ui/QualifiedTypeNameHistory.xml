@@ -5,10 +5,10 @@
 <fullyQualifiedTypeName name="plane.Line"/>
 <fullyQualifiedTypeName name="plane.Point"/>
 <fullyQualifiedTypeName name="numbers.Complex"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="exercise01.Drawable"/>
 <fullyQualifiedTypeName name="exercise01.Moveable"/>
 <fullyQualifiedTypeName name="exercise01.Writeable"/>
 <fullyQualifiedTypeName name="org.junit.jupiter.api.function.Executable"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

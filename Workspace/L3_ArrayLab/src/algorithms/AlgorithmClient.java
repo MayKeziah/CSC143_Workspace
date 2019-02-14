@@ -115,20 +115,55 @@ public class AlgorithmClient {
 	}
 	
 	/**
-	 * print: prints the contents of an integer list stored in an array to the console.
+	 * descendingSort: Sorts an array of integers in descending order.
 	 * 
-	 * @param list the list to print to the console
-	 */
-	public static void print(int[] list) {
+	 * @param list the list to sort
+	 * */
+	public static void descendingSort(int[] list) {
 		int len = list.length;
-		String output = "[";
-		for(int i = 0; i < len - 1; i++) {
-			output += list[i] + ", ";
+		for(int i = 0; i < len; i++) {
+			swap(i, findMax(list, i, len), list);
 		}
-		output += list[len-1] + "]";
-		System.out.println(output);
 	}
-	
+
+	/**
+	 * findMin: finds the largest element in a given range of an integer array.
+	 * 
+	 * @param list the list to transverse
+	 * @param startIndex the beginning of the range inclusive
+	 * @param endIndex the end of the range exclusive
+	 * */
+	public static int findMax(int[] list, int startIndex, int endIndex) {
+		int currentMax = list[startIndex];
+		int maxIndex = startIndex;
+		for(int i = startIndex; i < endIndex; i++) {
+			if(list[i] >= currentMax) {
+				currentMax = list[i];
+				maxIndex = i;
+			}
+		}
+		return maxIndex;
+	}
+
+	/**
+	 * findMin: finds the smallest element in a given range of an integer array.
+	 * 
+	 * @param list the list to transverse
+	 * @param startIndex the beginning of the range inclusive
+	 * @param endIndex the end of the range exclusive
+	 * */
+	public static int findMin(int[] list, int startIndex, int endIndex) {
+		int currentMin = list[startIndex];
+		int minIndex = startIndex;
+		for( int i = startIndex; i < endIndex; i++) {
+			if(list[i] <= currentMin) {
+				currentMin = list[i];
+				minIndex = i;
+			}
+		}
+		return minIndex;
+	}
+
 	/**
 	 * getKeyCount: counts how many times a particular value appears in an integer list.
 	 * 
@@ -145,7 +180,7 @@ public class AlgorithmClient {
 		}
 		return count;
 	}
-	
+
 	/**
 	 * indexof: returns the index of the first occurrance of a value in an integer list. If the value is not found, -1 is returned.
 	 * 
@@ -161,6 +196,48 @@ public class AlgorithmClient {
 		}
 		return -1;
 	}
+
+	/**
+	 * insert: Shifts the contents of the last half of an integer list to the right by one position, moving the last element to the middle position.
+	 * 
+	 * @param list the list to edit
+	 * */
+	public static void insert(int[] list) {
+		int len = list.length;
+		int lastElt = list[len - 1];
+		for (int i = len - 1; i > len / 2; i--) {
+			list[i] = list[i - 1];
+		}
+		list[len/2] = lastElt;
+	}
+
+	/**
+	 * print: prints the contents of an integer list stored in an array to the console.
+	 * 
+	 * @param list the list to print to the console
+	 */
+	public static void print(int[] list) {
+		int len = list.length;
+		String output = "[";
+		for(int i = 0; i < len - 1; i++) {
+			output += list[i] + ", ";
+		}
+		output += list[len-1] + "]";
+		System.out.println(output);
+	}
+	
+	/**
+	 * selectionSort: Sorts an array of integers in ascending order.
+	 * 
+	 * @param list the list to sort
+	 * */
+	public static void selectionSort(int[] list) {
+		int len = list.length;
+		for(int i = 0; i < len; i++) {
+			swap(i, findMin(list, i, len), list);
+		}
+	}
+
 	/**
 	 * shiftLeft: Shifts the contents of an integer list to the left by one position, moving the first element to the last position.
 	 * 
@@ -190,32 +267,6 @@ public class AlgorithmClient {
 	}
 	
 	/**
-	 * insert: Shifts the contents of the last half of an integer list to the right by one position, moving the last element to the middle position.
-	 * 
-	 * @param list the list to edit
-	 * */
-	public static void insert(int[] list) {
-		int len = list.length;
-		int lastElt = list[len - 1];
-		for (int i = len - 1; i > len / 2; i--) {
-			list[i] = list[i - 1];
-		}
-		list[len/2] = lastElt;
-	}
-	
-	/**
-	 * selectionSort: Sorts an array of integers in ascending order.
-	 * 
-	 * @param list the list to sort
-	 * */
-	public static void selectionSort(int[] list) {
-		int len = list.length;
-		for(int i = 0; i < len; i++) {
-			swap(i, findMin(list, i, len), list);
-		}
-	}
-	
-	/**
 	 * swap: swaps the location of two elements in an integer array.
 	 * 
 	 * @param index1 the first index to swap
@@ -226,56 +277,6 @@ public class AlgorithmClient {
 		int temp = list[index1];
 		list[index1] = list[index2];
 		list[index2] = temp;
-	}
-	
-	/**
-	 * findMin: finds the smallest element in a given range of an integer array.
-	 * 
-	 * @param list the list to transverse
-	 * @param startIndex the beginning of the range inclusive
-	 * @param endIndex the end of the range exclusive
-	 * */
-	public static int findMin(int[] list, int startIndex, int endIndex) {
-		int currentMin = list[startIndex];
-		int minIndex = startIndex;
-		for( int i = startIndex; i < endIndex; i++) {
-			if(list[i] <= currentMin) {
-				currentMin = list[i];
-				minIndex = i;
-			}
-		}
-		return minIndex;
-	}
-	
-	/**
-	 * findMin: finds the largest element in a given range of an integer array.
-	 * 
-	 * @param list the list to transverse
-	 * @param startIndex the beginning of the range inclusive
-	 * @param endIndex the end of the range exclusive
-	 * */
-	public static int findMax(int[] list, int startIndex, int endIndex) {
-		int currentMax = list[startIndex];
-		int maxIndex = startIndex;
-		for(int i = startIndex; i < endIndex; i++) {
-			if(list[i] >= currentMax) {
-				currentMax = list[i];
-				maxIndex = i;
-			}
-		}
-		return maxIndex;
-	}
-	
-	/**
-	 * descendingSort: Sorts an array of integers in descending order.
-	 * 
-	 * @param list the list to sort
-	 * */
-	public static void descendingSort(int[] list) {
-		int len = list.length;
-		for(int i = 0; i < len; i++) {
-			swap(i, findMax(list, i, len), list);
-		}
 	}
 }
 

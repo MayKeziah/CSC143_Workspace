@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class TestAlgorithms {
 
 	public static void main(String[] args) {
-		wordLengths(new Scanner("This is just a test to see what happens \n iiiiiiiiiiiiiiiiiiii"));
+		System.out.println(5%10 + "");
 	}
 	
 	public static void wordLengths(Scanner file){
