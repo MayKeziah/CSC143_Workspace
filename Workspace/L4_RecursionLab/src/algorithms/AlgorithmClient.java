@@ -76,6 +76,24 @@ public class AlgorithmClient {
 	}
 	
 	/**
+	 * base2: computes 2^n for a positive integer n
+	 * 
+	 * @param n the positive integer exponent to raise 2 to
+	 * @return the value of 2 to the power of the positive integer n
+	 * */
+	public static int base2(int n) {
+		if(n < 0) { //invalid input
+			return 0;
+		}if(n == 0) { //special case
+			return 1;
+		}if(n == 1){
+			return 2;
+		}else { //recursive call
+			return 2 * base2(n-1);
+		}
+	}
+
+	/**
 	 * factorial: a recursive algorithm for calculating a given integer's factorial product.
 	 * 
 	 * @param n the positive integer to initialize the factorial product calculation with
@@ -108,21 +126,6 @@ public class AlgorithmClient {
 	}
 
 	/**
-	 * sum: computes the sum of the first n positive integers.
-	 * 
-	 * @param n the number of positive integers to sum
-	 * @return the sum of the first n positive integers
-	 * */
-	public static int sum(int n) {
-		if(n <= 0) { //n = zero || invalid input
-			return 0;
-		}else {
-			return n + sum(n-1);
-		}
-		
-	}
-	
-	/**
 	 * oddSum: computes the sum of the first n positive odd integers.
 	 * 
 	 * @param n the number of odd integers to sum.
@@ -135,25 +138,7 @@ public class AlgorithmClient {
 			return n * 2 - 1 + oddSum(n-1);
 		}
 	}
-	
-	/**
-	 * base2: computes 2^n for a positive integer n
-	 * 
-	 * @param n the positive integer exponent to raise 2 to
-	 * @return the value of 2 to the power of the positive integer n
-	 * */
-	public static int base2(int n) {
-		if(n < 0) { //invalid input
-			return 0;
-		}if(n == 0) { //special case
-			return 1;
-		}if(n == 1){
-			return 2;
-		}else { //recursive call
-			return 2 * base2(n-1);
-		}
-	}
-	
+
 	/**
 	 * pow: computes x^n for real number x and positive integer n.
 	 * 
@@ -171,5 +156,20 @@ public class AlgorithmClient {
 		}else { //recursive call
 			return x * pow(x, n-1);
 		}
+	}
+
+	/**
+	 * sum: computes the sum of the first n positive integers.
+	 * 
+	 * @param n the number of positive integers to sum
+	 * @return the sum of the first n positive integers
+	 * */
+	public static int sum(int n) {
+		if(n <= 0) { //n = zero || invalid input
+			return 0;
+		}else {
+			return n + sum(n-1);
+		}
+		
 	}
 }

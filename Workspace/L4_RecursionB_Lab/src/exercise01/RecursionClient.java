@@ -25,8 +25,15 @@ public class RecursionClient {
 	 * @throws IllegalArgumentException for negative exponents.
 	 * *********************************************************/
 	public static double exp(double x, int n) {
-		
-		return 0;
+		if(n < 0) { //invalid input
+			throw new IllegalArgumentException("Value must be positive.");
+		}if(n == 0) { //special case
+			return 1;
+		}if(n == 1){ //base case
+			return x;
+		}else { //recursive call
+			return x * exp(x, n-1);
+		}
 	}
 	
 	/************************************************************
@@ -35,8 +42,13 @@ public class RecursionClient {
 	 * @throws IllegalArgumentException for negative numbers.
 	 * **********************************************************/
 	public static int factorial(int n) {
-		
-		return 0;
+		if(n < 0) { //invalid input
+			throw new IllegalArgumentException("Value must be a positive number.");
+		}if(n <= 1) { //end case (1)
+			return 1;
+		}else { //recursive call (2)
+			return n * factorial(n-1);
+		}
 	}
 	
 	/***********************************************************
@@ -45,8 +57,15 @@ public class RecursionClient {
 	 * @throws IllegalArgumentException for negative numbers.
 	 * *********************************************************/
 	public static int fibonacci(int n) {
-		
-		return 0;
+		if (n < 0) {
+			throw new IllegalArgumentException("Value must be positive.");
+		}if(n == 0) { //end case (0)
+			return 0;
+		}if(n == 1) { //end case (1)
+			return 1;
+		}else { //recursive call ( (n - 1) + (n - 2) )
+			return fibonacci(n - 1) + fibonacci(n - 2);
+		}
 	}
 	
 	/***********************************************************
@@ -55,8 +74,15 @@ public class RecursionClient {
 	 * @throws IllegalArgumentException for negative exponents.
 	 * *********************************************************/
 	public static int pow(int x, int n) {
-		
-		return 0;
+		if(n < 0) { //invalid input
+			throw new IllegalArgumentException("Value must be positive.");
+		}if(n == 0) { //special case
+			return 1;
+		}if(n == 1){ //base case
+			return x;
+		}else { //recursive call
+			return x * pow(x, n-1);
+		}
 	}
 	
 	/***********************************************************
@@ -65,8 +91,13 @@ public class RecursionClient {
 	 * @throws IllegalArgumentException for negative numbers.
 	 * *********************************************************/
 	public static int sum(int n) {
-		
-		return 0;
+		if(n < 0) { //invalid input
+			throw new IllegalArgumentException("Value must be positive.");
+		}if(n == 0) { //base case, sum = 0
+			return 0;
+		}else { //recursive call
+			return n + sum(n-1);
+		}
 	}
 	
 	/***********************************************************
@@ -75,8 +106,13 @@ public class RecursionClient {
 	 * @throws IllegalArgumentException for negative numbers.
 	 * *********************************************************/
 	public static int sumOdd(int n) {
-		
-		return 0;
+		if(n < 0) { //invalid input
+			throw new IllegalArgumentException("Value must be positive.");
+		}if(n == 0) { //base case, sum = 0
+			return 0;
+		}else { //recursive case
+			return n * 2 - 1 + sumOdd(n-1);
+		}
 	}
 	
 	/***********************************************************
@@ -107,15 +143,15 @@ public class RecursionClient {
 		n = 16;
 		double two$n = Math.pow(2, n);
 		System.out.println();
-		System.out.println("pow(2, n): " + n + two$n);
-		System.out.println("pow(2, n): " + n + pow(2, n));
+		System.out.println("pow(2, n): " + n + " " + two$n);
+		System.out.println("pow(2, n): " + n + " " + pow(2, n));
 		
 		//e to the power of  n
 		n = 8;
 		double e$n = Math.pow(Math.E, n);
 		System.out.println();
-		System.out.println("e(n): " + n + e$n);
-		System.out.println("exp(e, n) " + n + exp(Math.E, n));
+		System.out.println("     e(n): " + n + " " + e$n);
+		System.out.println("exp(e, n): " + n + " " + exp(Math.E, n));
 		
 		n = 10;
 		System.out.println();
