@@ -48,8 +48,17 @@ public class IterationClient {
 	 * @throws IllegalArgumentException for negative numbers.
 	 * *********************************************************/
 	public static int fibonacci(int n) {
-		
-		return 0;
+		int sum = 0;
+		if (n < 0) {
+			throw new IllegalArgumentException("Value must be positive.");
+		}if(n == 0) { //end case (0)
+			return 0;
+		}if(n == 1) { //end case (1)
+			return 1;
+		}while (n > 1) { //iterative case ( (n - 1) + (n - 2) )
+			
+		}
+		return sum;
 	}
 	
 	
