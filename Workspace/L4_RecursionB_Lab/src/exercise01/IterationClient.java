@@ -13,8 +13,15 @@ public class IterationClient {
 	 * @throws IllegalArgumentException for negative exponents.
 	 * *********************************************************/
 	public static double exp(double x, int n) {
-		
-		return 0;
+		double product = 1;
+		if(n < 0) { //invalid input
+			throw new IllegalArgumentException("Value must be positive.");
+		}if(n == 0) { //special case
+			return 1;
+		}for(int i = 1; i <= n; i++) { //iterative case
+			product *= x;
+		}
+		return product;
 	}
 	
 	/************************************************************
@@ -23,8 +30,16 @@ public class IterationClient {
 	 * @throws IllegalArgumentException for negative numbers.
 	 * **********************************************************/
 	public static int factorial(int n) {
-		
-		return 0;
+		int product = 1;
+		if(n < 0) { //invalid input
+			throw new IllegalArgumentException("Value must be a positive number.");
+		}if(n <= 1) { //end case (1)
+			return 1;
+		}while (n > 1) { //iterative case (2)
+			product *= n;
+			n--;
+		}
+		return product;
 	}
 	
 	/***********************************************************
