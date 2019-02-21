@@ -4,7 +4,23 @@ import java.util.Scanner;
 public class TestAlgorithms {
 
 	public static void main(String[] args) {
-		System.out.println(5%10 + "");
+		String test1 = "Hello you";
+		String test2 = "uoy olleH";
+		isReverse(test1, test2);
+	}
+	
+	public static boolean isReverse(String s1, String s2){
+		s1 = s1.toLowerCase();
+		s2 = s2.toLowerCase();
+		System.out.println(reverse(s2));
+	    return s1.equals(reverse(s2));
+	}
+	public static String reverse(String s1){
+	    if ((s1 == null)||(s1.length() <= 1)) {
+	           return s1;
+	    }else{ 
+	           return s1.charAt(s1.length()-1) + reverse(s1.substring(0,s1.length()-1)); 
+	    } 
 	}
 	
 	public static void wordLengths(Scanner file){

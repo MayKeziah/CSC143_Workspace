@@ -48,17 +48,22 @@ public class IterationClient {
 	 * @throws IllegalArgumentException for negative numbers.
 	 * *********************************************************/
 	public static int fibonacci(int n) {
-		int sum = 0;
+		int sum1 = 0;
+		int sum2 = 1;
 		if (n < 0) {
 			throw new IllegalArgumentException("Value must be positive.");
 		}if(n == 0) { //end case (0)
 			return 0;
 		}if(n == 1) { //end case (1)
 			return 1;
-		}while (n > 1) { //iterative case ( (n - 1) + (n - 2) )
-			
+		}for (int i = 2; i < n; i++) { //iterative case ( f(n - 1) + f(n - 2) )
+			if (i % 2 == 0) {
+				sum1 += sum2;
+			}else {
+				sum2 += sum1;
+			}
 		}
-		return sum;
+		return sum1 + sum2;
 	}
 	
 	
@@ -68,8 +73,18 @@ public class IterationClient {
 	 * @throws IllegalArgumentException for negative exponents.
 	 * *********************************************************/
 	public static int pow(int x, int n) {
-		
-		return 0;
+		if(n < 0) { //invalid input
+			throw new IllegalArgumentException("Value must be positive.");
+		}if(n == 0) { //special case
+			return 1;
+		}if(n == 1) {
+			return x;
+		}
+		int y = x;
+		for (int i = 2; i <= n; i++) {
+			y*= x;
+		}
+		return y;
 	}
 	
 	/***********************************************************
@@ -78,8 +93,16 @@ public class IterationClient {
 	 * @throws IllegalArgumentException for negative numbers.
 	 * *********************************************************/
 	public static int sum(int n) {
-		
-		return 0;
+		if(n < 0) { //invalid input
+			throw new IllegalArgumentException("Value must be positive.");
+		}if(n == 0) { //base case, sum = 0
+			return 0;
+		}
+		int sum = 0;
+		for (int i = 0; i <= n; i++){
+			sum += i;
+		}
+		return sum;
 	}
 	
 	/***********************************************************
@@ -88,8 +111,19 @@ public class IterationClient {
 	 * @throws IllegalArgumentException for negative numbers.
 	 * *********************************************************/
 	public static int sumOdd(int n) {
-		
-		return 0;
+		if(n < 0) { //invalid input
+			throw new IllegalArgumentException("Value must be positive.");
+		}if(n == 0) { //base case, sum = 0
+			return 0;
+		}
+//		else { //recursive case
+//			return n * 2 - 1 + sumOdd(n-1);
+//		}
+		int sum = 0;
+		for (int i = 1; i <= n; i++) {
+			sum += (i * 2 -1);
+		}
+		return sum;
 	}
 	
 	/***********************************************************
