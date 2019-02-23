@@ -38,8 +38,14 @@ public class RecursiveBinarySearch {
 	 *  @param maximum index of interest
 	 * ****************************************************/
 	private static int binarySearch(int[] data, int target, int low, int high){
-		
-		return 0;
+		int mid = (low + high) / 2;
+		if (data[mid] == target) {
+			return mid;
+		}if (high == low) {
+			return -1;
+		}if(data[mid] < target) {
+			return binarySearch(data, target, mid + 1, high);
+		}return binarySearch(data, target, low, mid - 1);		
 	}
 	
 	/******************************************************
@@ -49,11 +55,13 @@ public class RecursiveBinarySearch {
 		
 		int[] data = {1, 3, 5, 7, 8, 9};
 		print(data);
-		
+		System.out.println("target value: " + 2);
 		int index = binarySearch(data, 2);
 		showLocation(index);
+		System.out.println("target value: " + 5);
 		index = binarySearch(data, 5);
 		showLocation(index);
+		System.out.println("target value: " + 9);
 		index = binarySearch(data, 9);
 		showLocation(index);
 	}
