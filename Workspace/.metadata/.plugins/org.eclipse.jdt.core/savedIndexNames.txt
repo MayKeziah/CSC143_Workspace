@@ -14,7 +14,6 @@ INDEX VERSION 1.131+C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Work
 3087658291.index
 1633721227.index
 2250951762.index
-1708016169.index
 872282486.index
 1575846093.index
 97969018.index
