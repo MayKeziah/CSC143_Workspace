@@ -1,4 +1,6 @@
 package search;
+
+
 /****************************************************************************
  * <p>This class demonstrates the use of a linear search algorithm. 
  * <br> Algorithm:  
@@ -20,8 +22,13 @@ public class LinearSearch {
 	public static int indexOf(int[] data, int target) {
 		
 		System.out.println("target value: " + target);
-		
-		return 0;
+
+		for (int i = 0; i < data.length; i ++) {
+			if(data[i] == target) {
+				return i;
+			}
+		}
+		return -1;
 	}
 	
 	/******************************************************

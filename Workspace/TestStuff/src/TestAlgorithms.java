@@ -4,9 +4,24 @@ import java.util.Scanner;
 public class TestAlgorithms {
 
 	public static void main(String[] args) {
-		String test1 = "Hello you";
-		String test2 = "uoy olleH";
-		isReverse(test1, test2);
+		countBinary(3);
+	}
+	
+	public static void countBinary(int n) {
+		if (n == 0) {
+			System.out.println();
+		}else {
+			countBinary("", n, 0);
+		}
+		
+	}
+	public static void countBinary(String toPrint, int n, int index) {
+		if(index == n) {
+			System.out.println(toPrint);
+		}else {
+			countBinary(toPrint + "0", n, index + 1);
+			countBinary(toPrint + "1", n, index + 1);			
+		}
 	}
 	
 	public static boolean isReverse(String s1, String s2){
