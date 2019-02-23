@@ -26,8 +26,20 @@ public class BinarySearch {
 	public static int binarySearch(int[] data, int target) {
 		
 		System.out.println("target value: " + target);
-		
-		return 0;
+		int low = 0;
+		int high = data.length - 1;
+		int mid = (high + low)/2;
+		while(low <= high) {
+			if(data[mid] == target) {
+				return mid;
+			}if (data[mid] > target) {
+				high = mid - 1;
+			}else {
+				low = mid + 1;
+			}
+			mid = (high + low)/2;
+		}
+		return -1;
 	}
 	
 	/******************************************************
