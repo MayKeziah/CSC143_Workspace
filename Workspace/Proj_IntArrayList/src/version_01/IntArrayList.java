@@ -41,6 +41,7 @@ public class IntArrayList {
 	
 	/**
 	 * Constructor:
+	 * <br> cannot accept negative numbers.
 	 * 
 	 * @param capacity sets the capacity of the IntArrayList to the given integer.
 	 * */
@@ -66,6 +67,7 @@ public class IntArrayList {
 	 * <br> Inserts the given value at the given index in the IntArrayList.
 	 * <br> Shifts all subsequent values to the right one position.
 	 * <br> Ensures the internal data structure grows as needed to store added values. 
+	 * <br> Does not accept negative numbers or numbers greater than the number of stored elements. 
 	 * 
 	 * @param index the location to insert the value.
 	 * @param value the integer to add to the list.
@@ -107,7 +109,8 @@ public class IntArrayList {
 	/**
 	 * Get Method: (accessor)
 	 * <br> Returns the value stored at the given index location.
-	 * 
+	 * <br> Does not accept negative numbers or numbers greater than or equal to the number of stored values.
+	 *  
 	 * @param index the location of the value to return.
 	 * */
 	public int get(int index) {
@@ -143,6 +146,7 @@ public class IntArrayList {
 	 * Remove Method: (mutator)
 	 * <br> Removes the value at the given location.
 	 * <br> Shifts all subsequent values to the left one position.
+	 * <br> Does not accept negative numbers or numbers greater than or equal to the number of stored values. 
 	 * 
 	 * @param index the location of the value to remove.
 	 * */
