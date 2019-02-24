@@ -95,7 +95,7 @@ public class IntArrayList {
 			}
 			mid = (high + low)/2;
 		}
-		return -1;
+		return mid;
 	}
 	
 	/**
