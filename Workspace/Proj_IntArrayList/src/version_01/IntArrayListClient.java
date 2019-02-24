@@ -14,7 +14,7 @@ public class IntArrayListClient {
 	 */
 	public static void main(String[] args) {
 		IntArrayList testDefault = new IntArrayList();
-		for (int i = 1; i < 11; i++) {
+		for (int i = 1; i <= 19; i++) {
 			testDefault.add(i);
 		}
 		System.out.println(testDefault + "\n" + testDefault.size());
