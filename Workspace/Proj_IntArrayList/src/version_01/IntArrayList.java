@@ -54,34 +54,35 @@ public class IntArrayList {
 	/**
 	 * Add Method: (mutator)
 	 * <br> Inserts the given value at the given index in the IntArrayList.
-	 * <br> Shifts all subsequent values to the right.
+	 * <br> Shifts all subsequent values to the right one position.
 	 * 
 	 * @param index the location to insert the value.
 	 * @param value the integer to add to the list.
 	 * */
 	public void add(int index, int value) { //TODO: add a handler for when the index is greater than or equal to the length of the database.
-		if (index >= element.length) {
-			throw new IndexOutOfBoundsException("This database is at capacity. The new value was not added.");
-		}
-		else {
-			shiftRight(index, value);
-			size++;
-		}
+		shiftRight(index, value);
+		size++;
 	}
-	
+	/**
+	 * Remove Method: (mutator)
+	 * <br> Removes the value at the given location.
+	 * <br> Shifts all subsequent values to the left one position.
+	 * */
 	public void remove(int index) { //TODO: add a handler for invalid index values
 		shiftLeft(index);
+		size--;
 	}
 	
 
-	// shiftLeft: Shifts the contents of an integer list to the left by one position, moving the first element to the last position.
+	// shiftLeft: private mutator helper method for remove(int)
+	//		Shifts the contents of an integer list to the left by one position from the given index
+	//		moving the subsequent elements over the given index.
 	// index: the index to shift onto.
-	public void shiftLeft(int index) {
+	private void shiftLeft(int index) {
 		while(index < size) {
 			element[index-1] = element[index];
 			index++;
 		}
-		size--;
 	}
 	
 	//  shiftRight: private mutator helper method for add(int, int)
