@@ -51,8 +51,8 @@ public class IntArrayList {
 	
 	/**
 	 * Add Method: (mutator)
-	 * <br> Appends a value to the end of the IntArrayList.
-	 * <br> Ensures the internal data structure grows as needed to store added values. 
+	 * <br> Appends an integer value to the end of the IntArrayList.
+	 * <br> Ensures the internal data structure grows as needed to store added integers. 
 	 * 
 	 * @param value the integer to add to the list.
 	 * */
@@ -70,7 +70,11 @@ public class IntArrayList {
 	 * @param value the integer to add to the list.
 	 * */
 	public void add(int index, int value) { //TODO: add a handler for when the index is greater than or equal to the length of the database.
-		if (element.length == size) {
+		if(index < 0) {
+			throw new IndexOutOfBoundsException("Index cannot be negative. Index = " + index);
+		}if(index > size) {
+			throw new IndexOutOfBoundsException("Index cannot be greater than size. Index = " + index);
+		}if (element.length == size) {
 			expand();
 		}
 		shiftRight(index, value);
