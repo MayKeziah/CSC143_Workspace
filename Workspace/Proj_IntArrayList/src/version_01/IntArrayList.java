@@ -39,7 +39,28 @@ public class IntArrayList {
 	 * */
 	public IntArrayList(int capacity) {	//TODO: test for invalid capacities.
 		element = new int[capacity];
-		setSize(0);
+		size = 0;
+	}
+	
+	/**
+	 * Add Method: (mutator)
+	 * <br> Appends a value to the end of the IntArrayList.
+	 * @param value the integer to add to the list.
+	 * */
+	public void add(int value) {
+		add(size, value);
+	}
+	
+	/**
+	 * Add Method: (mutator)
+	 * <br> Inserts the given value at the given index in the IntArrayList.
+	 * <br> Shifts all subsequent values to the right.
+	 * 
+	 * @param index the location to insert the value.
+	 * @param value the integer to add to the list.
+	 * */
+	public void add(int index, int value) {//TODO: add a handler for when the index is greater than or equal to the length of the database.
+		
 	}
 
 }
