@@ -21,7 +21,7 @@ public class IntArrayListClient {
 		
 		testDefault.remove(6);
 		System.out.println(testDefault + "\n" + testDefault.get(5) + ", " + testDefault.indexOf(7));
-		
+		testDefault.add(0, 1);
 
 	}
 

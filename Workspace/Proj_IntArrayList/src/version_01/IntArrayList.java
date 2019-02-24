@@ -73,7 +73,7 @@ public class IntArrayList {
 		if(index < 0) {
 			throw new IndexOutOfBoundsException("Index cannot be negative. Index = " + index);
 		}if(index > size) {
-			throw new IndexOutOfBoundsException("Index cannot be greater than size. Index = " + index);
+			throw new IndexOutOfBoundsException("Index cannot be greater than size. Index = " + index + ", Size = " + size);
 		}if (element.length == size) {
 			expand();
 		}
