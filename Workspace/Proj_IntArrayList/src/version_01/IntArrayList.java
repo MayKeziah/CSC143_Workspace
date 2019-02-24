@@ -74,6 +74,23 @@ public class IntArrayList {
 		return element[index];
 	}
 	
+	public int indexOf(int value) {
+		int low = 0;
+		int high = element.length - 1;
+		int mid = (high + low)/2;
+		while(low <= high) {
+			if(element[mid] == value) {
+				return mid;
+			}if (element[mid] > value) {
+				high = mid - 1;
+			}else {
+				low = mid + 1;
+			}
+			mid = (high + low)/2;
+		}
+		return -1;
+	}
+	
 	/**
 	 * Remove Method: (mutator)
 	 * <br> Removes the value at the given location.
