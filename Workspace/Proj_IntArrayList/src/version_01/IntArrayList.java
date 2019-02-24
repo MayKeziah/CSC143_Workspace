@@ -112,6 +112,7 @@ public class IntArrayList {
 	
 	/**
 	 * Size method: (assessor)
+	 * 
 	 * @return The number of locations (size) occupied in the IntArrayList.
 	 * */
 	public int size() {
