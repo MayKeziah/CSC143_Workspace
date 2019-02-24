@@ -4,7 +4,6 @@
 package tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
@@ -120,6 +119,7 @@ class IntArrayListATest {
 	void testIndexOf() {
 		System.out.println("---------------------------------------------------------------------------------------");
 		testList = new IntArrayList();
+		int outOfRange = 200;
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
 			testList.add(i);
 		}
@@ -128,6 +128,7 @@ class IntArrayListATest {
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY - 1; i++) {
 			assertEquals(i, testList.indexOf(i), "Index " + i + " failed test.");
 		}
+		assertEquals(IntArrayList.NOT_FOUND, testList.indexOf(outOfRange), "Index-not-found failed test.");
 		System.out.println("\tList after .indexOf(int) called:\n\t" + testList);
 	}
 

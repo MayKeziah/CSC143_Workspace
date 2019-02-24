@@ -95,7 +95,7 @@ public class IntArrayList {
 			}
 			mid = (high + low)/2;
 		}
-		return mid;
+		return NOT_FOUND;
 	}
 	
 	/**
@@ -110,11 +110,13 @@ public class IntArrayList {
 		size--;
 	}
 	
-
-	// shiftLeft: private mutator helper method for remove(int)
-	//		Shifts the contents of an integer list to the left by one position from the given index
-	//		moving the subsequent elements over the given index.
-	// index: the index to shift onto.
+	/**
+	 * shiftLeft for remove(int): private mutator helper method 
+	 * <br> Shifts the contents of an integer list to the left by one position from the given index
+	 * <br> moving the subsequent elements over the given index.
+	 * 
+	 * @param index the index to shift onto.
+	 */
 	private void shiftLeft(int index) {
 		while(index < size - 1) {
 			element[index] = element[index + 1];
@@ -122,11 +124,14 @@ public class IntArrayList {
 		}
 	}
 	
-	// shiftRight: private mutator helper method for add(int, int)
-	// 		Shifts the contents of 'element' to the right by one position from the given index to element indexed at size. 
-	// 		fills the given index location with the given value.
-	// index: the location to insert the value.
-	// value: the integer to insert at the given location.
+	/**
+	 * shiftRight for add(int, int): private mutator helper method 
+	 * <br> Shifts the contents of 'element' to the right by one position from the given index to element indexed at size. 
+	 * <br> fills the given index location with the given value.
+	 * 
+	 * @param the location to insert the value.
+	 * @param the integer to insert at the given location.
+	 * */
 	private void shiftRight(int index, int value) {
 		for(int i = size; i > index; i--) {
 			element[i] = element[i-1];
