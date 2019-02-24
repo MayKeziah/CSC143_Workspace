@@ -70,6 +70,7 @@ public class IntArrayList {
 	 * @param value the integer to add to the list.
 	 * */
 	public void add(int index, int value) { 
+		checkNegative(index);
 		if(index > size) {
 			throw new IndexOutOfBoundsException("Index cannot be greater than size. Index = " + index + ", Size = " + size);
 		}if (element.length == size) { // If there is no more room, expand the data-structure.
@@ -79,11 +80,16 @@ public class IntArrayList {
 		size++;
 	}
 	
+	/**
+	 * checkNegative for add(int, int), remove(int), this(int): (private-helper method) 
+	 * <br> checks if the given number is negative. If yes, it throws an exception. If no, it does nothing.
+	 * */
 	private void checkNegative(int check) {
 		if(check < 0) { 
 			throw new IndexOutOfBoundsException("Value cannot be negative. Value = " + check);
 		}
 	}
+
 	/**
 	 * expand for add(int, int): (private-mutator-helper method) 
 	 * <br> Increases the capacity of the internal data structure.
