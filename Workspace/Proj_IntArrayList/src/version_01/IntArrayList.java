@@ -63,6 +63,17 @@ public class IntArrayList {
 		shiftRight(index, value);
 		size++;
 	}
+	
+	/**
+	 * Get Method: (accessor)
+	 * <br> Returns the value stored at the given index location.
+	 * 
+	 * @param index the location of the value to return.
+	 * */
+	public int get(int index) {
+		return element[index];
+	}
+	
 	/**
 	 * Remove Method: (mutator)
 	 * <br> Removes the value at the given location.
@@ -85,11 +96,11 @@ public class IntArrayList {
 		}
 	}
 	
-	//  shiftRight: private mutator helper method for add(int, int)
+	// shiftRight: private mutator helper method for add(int, int)
 	// 		Shifts the contents of 'element' to the right by one position from the given index to element indexed at size. 
 	// 		fills the given index location with the given value.
-	// 	index: the location to insert the value.
-	// 	value: the integer to insert at the given location.
+	// index: the location to insert the value.
+	// value: the integer to insert at the given location.
 	private void shiftRight(int index, int value) {
 		for(int i = size; i > index; i--) {
 			element[i] = element[i-1];
