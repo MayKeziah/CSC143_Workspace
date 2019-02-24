@@ -80,5 +80,13 @@ public class IntArrayList {
 		}
 		element[index] = value;
 	}
+	
+	public String toString() {
+		String toReturn = "[";
+		for (int i = 0; i < size - 1; i++) {
+			toReturn += element[i] + ", ";
+		}
+		return toReturn + element[size-1] + "]";
+	}
 
 }
