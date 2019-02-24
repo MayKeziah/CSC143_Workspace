@@ -136,7 +136,19 @@ class IntArrayListATest {
 	 */
 	@Test
 	void testRemove() {
-		fail("Not yet implemented");
+		System.out.println("---------------------------------------------------------------------------------------");
+		int removeIndex = 0;
+		testList = new IntArrayList();
+		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
+			testList.add(i);
+		}
+		System.out.println("Test of Mutator method remove(int):");	
+		System.out.println("\tInitial list generated:\n\t" + testList);
+		testList.remove(removeIndex);
+		System.out.println("\tList after .remove(" + removeIndex + ") called:\n\t" + testList);
+		for (int i = 1; i < IntArrayList.DEFAULT_CAPACITY - 1; i++) {
+			assertEquals(i, testList.get(i - 1), "Index " + i + " failed test.");
+		}
 	}
 
 	/**

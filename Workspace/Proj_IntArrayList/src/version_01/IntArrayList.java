@@ -116,8 +116,8 @@ public class IntArrayList {
 	//		moving the subsequent elements over the given index.
 	// index: the index to shift onto.
 	private void shiftLeft(int index) {
-		while(index < size) {
-			element[index-1] = element[index];
+		while(index < size - 1) {
+			element[index] = element[index + 1];
 			index++;
 		}
 	}
