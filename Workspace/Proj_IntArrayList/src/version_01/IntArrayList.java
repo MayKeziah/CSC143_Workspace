@@ -44,7 +44,8 @@ public class IntArrayList {
 	 * 
 	 * @param capacity sets the capacity of the IntArrayList to the given integer.
 	 * */
-	public IntArrayList(int capacity) {	//TODO: test for invalid (negative) capacities.
+	public IntArrayList(int capacity) {	
+		checkNegative(capacity);
 		element = new int[capacity];
 		size = 0;
 	}
@@ -143,7 +144,10 @@ public class IntArrayList {
 	 * 
 	 * @param index the location of the value to remove.
 	 * */
-	public void remove(int index) { //TODO: add a handler for invalid index values
+	public void remove(int index) { 
+		checkNegative(index);
+		if (index > size - 1) { 
+			throw new IndexOutOfBoundsException("Index cannot be greater than or equal to size. Index = " + index + ", Size = " + size);		}
 		shiftLeft(index);
 		size--;
 	}
