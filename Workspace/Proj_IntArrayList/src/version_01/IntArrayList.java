@@ -74,6 +74,13 @@ public class IntArrayList {
 		return element[index];
 	}
 	
+	/**
+	 * IndexOf Method: 
+	 * <br> searches for the location (index) of a given value and returns that location.
+	 * 
+	 * @param value the value to search for
+	 * @return the location of the given value, -1 if not found.
+	 * */
 	public int indexOf(int value) {
 		int low = 0;
 		int high = element.length - 1;
