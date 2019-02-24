@@ -52,6 +52,7 @@ public class IntArrayList {
 	/**
 	 * Add Method: (mutator)
 	 * <br> Appends a value to the end of the IntArrayList.
+	 * <br> Ensures the internal data structure grows as needed to store added values. 
 	 * 
 	 * @param value the integer to add to the list.
 	 * */
@@ -63,6 +64,7 @@ public class IntArrayList {
 	 * Add Method: (mutator)
 	 * <br> Inserts the given value at the given index in the IntArrayList.
 	 * <br> Shifts all subsequent values to the right one position.
+	 * <br> Ensures the internal data structure grows as needed to store added values. 
 	 * 
 	 * @param index the location to insert the value.
 	 * @param value the integer to add to the list.
@@ -75,6 +77,10 @@ public class IntArrayList {
 		size++;
 	}
 	
+	/**
+	 * expand for add(int, int): (private-mutator-helper method) 
+	 * <br> Increases the capacity of the internal data structure.
+	 * */
 	private void expand() {
 		int[] temp = new int[size + DEFAULT_CAPACITY];
 		for (int i = 0; i < size; i++) {
