@@ -14,9 +14,10 @@ public class IntArrayListClient {
 	 */
 	public static void main(String[] args) {
 		IntArrayList testDefault = new IntArrayList();
-		testDefault.add(1);
-		testDefault.add(1);
-
+		for (int i = 1; i < 11; i++) {
+			testDefault.add(i);
+		}
+		testDefault.add(11);
 		System.out.println(testDefault);
 		
 
