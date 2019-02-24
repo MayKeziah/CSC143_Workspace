@@ -111,6 +111,14 @@ public class IntArrayList {
 	}
 	
 	/**
+	 * Size method: (assessor)
+	 * @return The number of locations (size) occupied in the IntArrayList.
+	 * */
+	public int size() {
+		return size;
+	}
+	
+	/**
 	 * toString Method: (accessor)
 	 * 
 	 * @return a string representation of the IntArrayList in form: "[0, 1, . . . , size-1]"
