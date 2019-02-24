@@ -99,7 +99,18 @@ class IntArrayListATest {
 	 */
 	@Test
 	void testGet() {
-		fail("Not yet implemented");
+		System.out.println("---------------------------------------------------------------------------------------");
+		testList = new IntArrayList();
+		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
+			testList.add(i);
+		}
+		System.out.println("Test of Accessor method get(int):");	
+		System.out.println("\tStarting list generated:\n\t" + testList);
+		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY - 1; i++) {
+			assertEquals(i, testList.get(i), "Index " + i + " failed test.");
+		}
+		System.out.println("\tList after .get(int) called:\n\t" + testList);
+		System.out.println("\tSize after .get(int) called:\n\t" + testList.size());
 	}
 
 	/**
@@ -107,7 +118,17 @@ class IntArrayListATest {
 	 */
 	@Test
 	void testIndexOf() {
-		fail("Not yet implemented");
+		System.out.println("---------------------------------------------------------------------------------------");
+		testList = new IntArrayList();
+		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
+			testList.add(i);
+		}
+		System.out.println("Test of Method indexOf(int):");	
+		System.out.println("\tStarting list generated:\n\t" + testList);
+		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY - 1; i++) {
+			assertEquals(i, testList.indexOf(i), "Index " + i + " failed test.");
+		}
+		System.out.println("\tList after .indexOf(int) called:\n\t" + testList);
 	}
 
 	/**
@@ -123,6 +144,7 @@ class IntArrayListATest {
 	 */
 	@Test
 	void testSize() {
+		assertEquals(IntArrayList.DEFAULT_CAPACITY, testList.size(), "Size does not equal the number of elements stored.");
 		fail("Not yet implemented");
 	}
 
