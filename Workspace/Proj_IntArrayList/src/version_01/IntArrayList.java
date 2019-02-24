@@ -70,12 +70,12 @@ public class IntArrayList {
 	}
 	
 	//  shiftRight: private helper method for add
-	// 		Shifts the contents of part of an integer list to the right by one position, filling the start index with a given value.
+	// 		Shifts the contents of 'element' to the right by one position from the given index to element indexed at size. 
+	// 		fills the given index location with the given value.
 	// 	index: the location to insert the value.
 	// 	value: the integer to insert at the given location.
 	private void shiftRight(int index, int value) {
-		int len = size - 1;
-		for(int i = len; i > index; i--) {
+		for(int i = size; i > index; i--) {
 			element[i] = element[i-1];
 		}
 		element[index] = value;
