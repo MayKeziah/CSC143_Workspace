@@ -111,7 +111,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * shiftLeft for remove(int): private mutator helper method 
+	 * shiftLeft for remove(int): (private-mutator-helper method) 
 	 * <br> Shifts the contents of an integer list to the left by one position from the given index
 	 * <br> moving the subsequent elements over the given index.
 	 * 
@@ -125,7 +125,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * shiftRight for add(int, int): private mutator helper method 
+	 * shiftRight for add(int, int): (private-mutator-helper method) 
 	 * <br> Shifts the contents of 'element' to the right by one position from the given index to element indexed at size. 
 	 * <br> fills the given index location with the given value.
 	 * 
