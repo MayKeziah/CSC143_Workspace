@@ -44,7 +44,7 @@ public class IntArrayList {
 	 * 
 	 * @param capacity sets the capacity of the IntArrayList to the given integer.
 	 * */
-	public IntArrayList(int capacity) {	//TODO: test for invalid capacities.
+	public IntArrayList(int capacity) {	//TODO: test for invalid (negative) capacities.
 		element = new int[capacity];
 		size = 0;
 	}
