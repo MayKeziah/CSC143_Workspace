@@ -19,7 +19,7 @@ public class IntArrayListClient {
 		}
 		System.out.println(testDefault);
 		testDefault.remove(6);
-		System.out.println(testDefault);
+		System.out.println(testDefault + "\n" + testDefault.get(5));
 		
 
 	}
