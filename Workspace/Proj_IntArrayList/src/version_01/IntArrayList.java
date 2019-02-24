@@ -11,9 +11,15 @@ package version_01;
  */
 public class IntArrayList {
 	
-
-	private int[] element; // The internal data structure.
-	private int size; 	   // The current number of elements stored in the IntArrayList
+	/**
+	 * The internal data structure.
+	 * */
+	private int[] element; 
+	
+	/**
+	 * The current number of elements stored in the IntArrayList
+	 * */
+	private int size; 	   
 	
 	/**
 	 * 	The initialized capacity for a default IntArrayList (10).
@@ -26,7 +32,7 @@ public class IntArrayList {
 	public static int NOT_FOUND = -1;
 	
 	/**
-	 * Default Constructor:
+	 * <p> Default Constructor:
 	 * <br> Sets the capacity of the IntArrayList to default (10).
 	 * */
 	public IntArrayList() {
@@ -34,7 +40,8 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * Constructor:
+	 * <p> Constructor:
+	 * 
 	 * @param capacity sets the capacity of the IntArrayList to the given integer.
 	 * */
 	public IntArrayList(int capacity) {	//TODO: test for invalid capacities.
@@ -43,7 +50,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * Add Method: (mutator)
+	 * <p> Add Method: (mutator)
 	 * <br> Appends a value to the end of the IntArrayList.
 	 * @param value the integer to add to the list.
 	 * */
@@ -52,7 +59,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * Add Method: (mutator)
+	 * <p> Add Method: (mutator)
 	 * <br> Inserts the given value at the given index in the IntArrayList.
 	 * <br> Shifts all subsequent values to the right one position.
 	 * 
@@ -65,7 +72,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * Get Method: (accessor)
+	 * <p> Get Method: (accessor)
 	 * <br> Returns the value stored at the given index location.
 	 * 
 	 * @param index the location of the value to return.
@@ -75,7 +82,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * IndexOf Method: 
+	 * <p> IndexOf Method: 
 	 * <br> searches for the location (index) of a given value and returns that location.
 	 * 
 	 * @param value the value to search for
@@ -99,7 +106,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * Remove Method: (mutator)
+	 * <p> Remove Method: (mutator)
 	 * <br> Removes the value at the given location.
 	 * <br> Shifts all subsequent values to the left one position.
 	 * 
@@ -111,7 +118,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * shiftLeft for remove(int): (private-mutator-helper method) 
+	 * <p> shiftLeft for remove(int): (private-mutator-helper method) 
 	 * <br> Shifts the contents of an integer list to the left by one position from the given index
 	 * <br> moving the subsequent elements over the given index.
 	 * 
@@ -125,7 +132,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * shiftRight for add(int, int): (private-mutator-helper method) 
+	 * <p> shiftRight for add(int, int): (private-mutator-helper method) 
 	 * <br> Shifts the contents of 'element' to the right by one position from the given index to element indexed at size. 
 	 * <br> fills the given index location with the given value.
 	 * 
@@ -140,7 +147,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * Size method: (assessor)
+	 * <p> Size method: (accessor)
 	 * 
 	 * @return The number of locations (size) occupied in the IntArrayList.
 	 * */
@@ -149,7 +156,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * toString Method: (accessor)
+	 * <p> toString Method: (accessor)
 	 * 
 	 * @return a string representation of the IntArrayList in form: "[0, 1, . . . , size-1]"
 	 * */
