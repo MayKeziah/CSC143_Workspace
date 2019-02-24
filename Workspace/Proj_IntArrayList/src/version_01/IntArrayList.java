@@ -61,7 +61,7 @@ public class IntArrayList {
 	 * */
 	public void add(int index, int value) {//TODO: add a handler for when the index is greater than or equal to the length of the database.
 		if (index >= element.length) {
-			throw new IllegalArgumentException("This database is at capacity. The new value was not added.");
+			throw new IndexOutOfBoundsException("This database is at capacity. The new value was not added.");
 		}
 		else {
 			shiftRight(index, value);
