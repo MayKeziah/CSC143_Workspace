@@ -156,8 +156,18 @@ class IntArrayListATest {
 	 */
 	@Test
 	void testSize() {
+		System.out.println("---------------------------------------------------------------------------------------");
+		testList = new IntArrayList();
+		assertEquals(0, testList.size(), "Initial size does not equal 0.");
+
+		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
+			testList.add(i);
+		}
+		System.out.println("Test of Accessor method size():");	
+		System.out.println("\tStarting list generated:\n\t" + testList);
 		assertEquals(IntArrayList.DEFAULT_CAPACITY, testList.size(), "Size does not equal the number of elements stored.");
-		fail("Not yet implemented");
+		System.out.println("\tList after .size(int) called:\n\t" + testList);
+		System.out.println("\tSize after .size(int) called:\n\t" + testList.size());
 	}
 
 	/**
@@ -165,7 +175,16 @@ class IntArrayListATest {
 	 */
 	@Test
 	void testToString() {
-		fail("Not yet implemented");
+		System.out.println("---------------------------------------------------------------------------------------");
+		testList = new IntArrayList();
+		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
+			testList.add(i);
+		}
+		System.out.println("Test of Accessor method toString():");	
+		System.out.println("\tStarting list generated:\n\t" + testList);
+		assertEquals("[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]", testList.toString(), "String returned by toString does not equal the desired String.");
+		System.out.println("\tList after .toString(int) called:\n\t" + testList);
+		System.out.println("\tSize after .toString(int) called:\n\t" + testList.size());
 	}
 
 }
