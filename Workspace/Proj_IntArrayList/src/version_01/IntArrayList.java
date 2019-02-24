@@ -72,9 +72,7 @@ public class IntArrayList {
 	 * */
 	public void add(int index, int value) { 
 		checkNegative(index);
-		if(index > size) {
-			throw new IndexOutOfBoundsException("Index cannot be greater than size. Index = " + index + ", Size = " + size);
-		}if (element.length == size) { // If there is no more room, expand the data-structure.
+		if (element.length == size) { // If there is no more room, expand the data-structure.
 			expand();
 		}
 		shiftRight(index, value); // Add the new integer to the given index and shift the following values to the right.
@@ -84,10 +82,13 @@ public class IntArrayList {
 	/**
 	 * checkNegative for add(int, int), remove(int), this(int): (private-helper method) 
 	 * <br> checks if the given number is negative. If yes, it throws an exception. If no, it does nothing.
+	 * <br> checks if the given number is out of the valid range. If yes, it throws an exception. If no, it does nothing.
 	 * */
-	private void checkNegative(int check) {
+	private void checkOutRange(int check, int max) {
 		if(check < 0) { 
 			throw new IndexOutOfBoundsException("Value cannot be negative. Value = " + check);
+		}if(check > max) {
+			throw new IndexOutOfBoundsException("Value cannot be greater than valid range. value = " + check + ", Max = " + max);
 		}
 	}
 
@@ -110,6 +111,7 @@ public class IntArrayList {
 	 * @param index the location of the value to return.
 	 * */
 	public int get(int index) {
+		checkNegative(index);
 		return element[index];
 	}
 	
