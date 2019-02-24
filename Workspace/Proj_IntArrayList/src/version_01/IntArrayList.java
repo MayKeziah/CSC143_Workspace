@@ -27,7 +27,7 @@ public class IntArrayList {
 	
 	/**
 	 * Default Constructor:
-	 * <br> Sets the capacity of the IntArrayList to default.
+	 * <br> Sets the capacity of the IntArrayList to default (10).
 	 * */
 	public IntArrayList() {
 		this(DEFAULT_CAPACITY);
