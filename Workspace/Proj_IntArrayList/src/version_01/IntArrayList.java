@@ -60,7 +60,25 @@ public class IntArrayList {
 	 * @param value the integer to add to the list.
 	 * */
 	public void add(int index, int value) {//TODO: add a handler for when the index is greater than or equal to the length of the database.
-		
+		if (index >= element.length) {
+			throw new IllegalArgumentException("This database is at capacity. The new value was not added.");
+		}
+		else {
+			shiftRight(index, value);
+			size++;
+		}
+	}
+	
+	//  shiftRight: private helper method for add
+	// 		Shifts the contents of part of an integer list to the right by one position, filling the start index with a given value.
+	// 	index: the location to insert the value.
+	// 	value: the integer to insert at the given location.
+	private void shiftRight(int index, int value) {
+		int len = element.length - 1;
+		for(int i = len; i > index; i--) {
+			element[i] = element[i-1];
+		}
+		element[index] = value;
 	}
 
 }
