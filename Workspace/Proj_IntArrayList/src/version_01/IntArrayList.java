@@ -24,5 +24,22 @@ public class IntArrayList {
 	 * The value returned if an element is not found in the IntArrayList (-1).
 	 * */
 	public static int NOT_FOUND = -1;
+	
+	/**
+	 * Default Constructor:
+	 * <br> Sets the capacity of the IntArrayList to default.
+	 * */
+	public IntArrayList() {
+		this(DEFAULT_CAPACITY);
+	}
+	
+	/**
+	 * Constructor:
+	 * @param capacity sets the capacity of the IntArrayList to the given integer.
+	 * */
+	public IntArrayList(int capacity) {	//TODO: test for invalid capacities.
+		element = new int[capacity];
+		setSize(0);
+	}
 
 }
