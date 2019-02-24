@@ -68,8 +68,19 @@ public class IntArrayList {
 	 * @param value the integer to add to the list.
 	 * */
 	public void add(int index, int value) { //TODO: add a handler for when the index is greater than or equal to the length of the database.
+		if (element.length == size) {
+			expand();
+		}
 		shiftRight(index, value);
 		size++;
+	}
+	
+	private void expand() {
+		int[] temp = new int[size + DEFAULT_CAPACITY];
+		for (int i = 0; i < size; i++) {
+			temp[i] = element[i];
+		}
+		element = temp;
 	}
 	
 	/**
