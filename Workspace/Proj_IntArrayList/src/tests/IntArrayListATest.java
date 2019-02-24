@@ -25,10 +25,6 @@ class IntArrayListATest {
 		testList = new IntArrayList();
 		System.out.println("Test of Default Constructor:");
 		System.out.println("\tSize: " + testList.size());
-		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
-			assertEquals(0, testList.get(i), "Index " + i + " failed test.");
-		}
-		System.out.println("\tTest passed for generated indecies 0 - " + IntArrayList.DEFAULT_CAPACITY);
 	}
 
 	/**
@@ -41,10 +37,6 @@ class IntArrayListATest {
 		testList = new IntArrayList(capacity);
 		System.out.println("Test of Constructor with specified capacity:");
 		System.out.println("\tSize: " + testList.size());
-		for (int i = 0; i < capacity; i++) {
-			assertEquals(0, testList.get(i), "Index " + i + " failed test.");
-		}	
-		System.out.println("\tTest passed for generated indecies 0 - " + capacity);
 	}
 
 	/**
@@ -57,13 +49,10 @@ class IntArrayListATest {
 		testList = new IntArrayList();
 		System.out.println("Test of Mutator method add(int):");	
 		System.out.println("\tInitial list generated:\n\t" + testList);
-		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
-			assertEquals(0, testList.get(i), "Index " + i + " failed test.");
-		}
 		testList.add(toAdd);
 		System.out.println("\tList after .add(" + toAdd+ ") called:\n\t" + testList);
 		assertEquals(toAdd, testList.get(0), "Index " + 0 + " does not equal the added value.");
-		for (int i = 1; i < IntArrayList.DEFAULT_CAPACITY; i++) {
+		for (int i = 1; i < testList.size(); i++) {
 			assertEquals(0, testList.get(i), "Index " + i + " failed test.");
 		}
 	}

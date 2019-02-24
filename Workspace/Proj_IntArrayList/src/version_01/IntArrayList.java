@@ -45,7 +45,7 @@ public class IntArrayList {
 	 * @param capacity sets the capacity of the IntArrayList to the given integer.
 	 * */
 	public IntArrayList(int capacity) {	
-		checkNegative(capacity);
+		checkOutRange(capacity, capacity);
 		element = new int[capacity];
 		size = 0;
 	}
@@ -71,7 +71,7 @@ public class IntArrayList {
 	 * @param value the integer to add to the list.
 	 * */
 	public void add(int index, int value) { 
-		checkNegative(index);
+		checkOutRange(index, size);
 		if (element.length == size) { // If there is no more room, expand the data-structure.
 			expand();
 		}
@@ -111,7 +111,7 @@ public class IntArrayList {
 	 * @param index the location of the value to return.
 	 * */
 	public int get(int index) {
-		checkNegative(index);
+		checkOutRange(index, size - 1);
 		return element[index];
 	}
 	
@@ -147,9 +147,7 @@ public class IntArrayList {
 	 * @param index the location of the value to remove.
 	 * */
 	public void remove(int index) { 
-		checkNegative(index);
-		if (index > size - 1) { 
-			throw new IndexOutOfBoundsException("Index cannot be greater than or equal to size. Index = " + index + ", Size = " + size);		}
+		checkOutRange(index, size - 1);
 		shiftLeft(index);
 		size--;
 	}
