@@ -69,15 +69,15 @@ public class IntArrayList {
 	 * @param index the location to insert the value.
 	 * @param value the integer to add to the list.
 	 * */
-	public void add(int index, int value) { //TODO: add a handler for when the index is greater than or equal to the length of the database.
-		if(index < 0) {
+	public void add(int index, int value) { 
+		if(index < 0) { 
 			throw new IndexOutOfBoundsException("Index cannot be negative. Index = " + index);
 		}if(index > size) {
 			throw new IndexOutOfBoundsException("Index cannot be greater than size. Index = " + index + ", Size = " + size);
-		}if (element.length == size) {
+		}if (element.length == size) { // If there is no more room, expand the data-structure.
 			expand();
 		}
-		shiftRight(index, value);
+		shiftRight(index, value); // Add the new integer to the given index and shift the following values to the right.
 		size++;
 	}
 	
@@ -86,11 +86,11 @@ public class IntArrayList {
 	 * <br> Increases the capacity of the internal data structure.
 	 * */
 	private void expand() {
-		int[] temp = new int[size + DEFAULT_CAPACITY];
-		for (int i = 0; i < size; i++) {
+		int[] temp = new int[size + DEFAULT_CAPACITY]; // Create a new Array with more room
+		for (int i = 0; i < size; i++) { // Copy the current array to the new array
 			temp[i] = element[i];
 		}
-		element = temp;
+		element = temp; 
 	}
 	
 	/**
@@ -114,17 +114,17 @@ public class IntArrayList {
 		int low = 0;
 		int high = element.length - 1;
 		int mid = (high + low)/2;
-		while(low <= high) {
-			if(element[mid] == value) {
+		while(low <= high) { // Binary search algorithm
+			if(element[mid] == value) {	// If the middle index = the given value, return the index
 				return mid;
-			}if (element[mid] > value) {
+			}if (element[mid] > value) {// If the middle index > value, search only the left half of the Array.
 				high = mid - 1;
-			}else {
+			}else { 					// If the middle index < value, search only the right half of the Array.
 				low = mid + 1;
 			}
-			mid = (high + low)/2;
+			mid = (high + low)/2;		// Re-evaluate the middle index and repeat the algorithm.
 		}
-		return NOT_FOUND;
+		return NOT_FOUND;				// If the value is not found, return -1.
 	}
 	
 	/**
@@ -162,10 +162,10 @@ public class IntArrayList {
 	 * @param the integer to insert at the given location.
 	 * */
 	private void shiftRight(int index, int value) {
-		for(int i = size; i > index; i--) {
+		for(int i = size; i > index; i--) { // Shift values right one position from the given index to the end of the stored values.
 			element[i] = element[i-1];
 		}
-		element[index] = value;
+		element[index] = value;				// Store the given value in the given index.
 	}
 	
 	/**
@@ -184,10 +184,10 @@ public class IntArrayList {
 	 * */
 	public String toString() {
 		String toReturn = "[";
-		if(size == 0) {
+		if(size == 0) { // If the data-structure is empty, return "[]"
 			return toReturn + "]";
 		}
-		for (int i = 0; i < size - 1; i++) {
+		for (int i = 0; i < size - 1; i++) { 
 			toReturn += element[i] + ", ";
 		}
 		return toReturn + element[size-1] + "]";
