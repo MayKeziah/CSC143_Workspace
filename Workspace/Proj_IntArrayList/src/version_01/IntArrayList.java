@@ -69,7 +69,7 @@ public class IntArrayList {
 		}
 	}
 	
-	//  shiftRight: private helper method for add
+	//  shiftRight: private mutator helper method for add(int, int)
 	// 		Shifts the contents of 'element' to the right by one position from the given index to element indexed at size. 
 	// 		fills the given index location with the given value.
 	// 	index: the location to insert the value.
@@ -81,6 +81,11 @@ public class IntArrayList {
 		element[index] = value;
 	}
 	
+	/**
+	 * toString Method: (accessor)
+	 * 
+	 * @return a string representation of the IntArrayList in form: "[0, 1, . . . , size-1]"
+	 * */
 	public String toString() {
 		String toReturn = "[";
 		for (int i = 0; i < size - 1; i++) {
