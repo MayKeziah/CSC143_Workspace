@@ -78,6 +78,8 @@ public class IntArrayList {
 	 * Remove Method: (mutator)
 	 * <br> Removes the value at the given location.
 	 * <br> Shifts all subsequent values to the left one position.
+	 * 
+	 * @param index the location of the value to remove.
 	 * */
 	public void remove(int index) { //TODO: add a handler for invalid index values
 		shiftLeft(index);
