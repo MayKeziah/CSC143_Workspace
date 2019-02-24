@@ -112,6 +112,7 @@ public class IntArrayList {
 	 * <br> Does not accept negative numbers or numbers greater than or equal to the number of stored values.
 	 *  
 	 * @param index the location of the value to return.
+	 * @return the value stored at the given index.
 	 * */
 	public int get(int index) {
 		checkOutRange(index, size - 1);
