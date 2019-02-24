@@ -17,7 +17,8 @@ public class IntArrayListClient {
 		for (int i = 1; i < 11; i++) {
 			testDefault.add(i);
 		}
-		testDefault.add(11);
+		System.out.println(testDefault);
+		testDefault.remove(6);
 		System.out.println(testDefault);
 		
 
