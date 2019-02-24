@@ -74,7 +74,7 @@ public class IntArrayList {
 	// 	index: the location to insert the value.
 	// 	value: the integer to insert at the given location.
 	private void shiftRight(int index, int value) {
-		int len = element.length - 1;
+		int len = size - 1;
 		for(int i = len; i > index; i--) {
 			element[i] = element[i-1];
 		}
