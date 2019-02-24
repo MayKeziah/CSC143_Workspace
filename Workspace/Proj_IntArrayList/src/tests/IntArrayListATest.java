@@ -77,18 +77,18 @@ class IntArrayListATest {
 		int toAdd = 9;
 		int atIndex = 0;
 		testList = new IntArrayList();
-		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY - 1; i++) {
+		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
 			testList.add(i);
 		}
 		System.out.println("Test of Mutator method add(int, int):");	
 		System.out.println("\tStarting list generated:\n\t" + testList);
-		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY - 1; i++) {
+		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
 			assertEquals(i, testList.get(i), "Index " + i + " failed test.");
 		}
 		testList.add(atIndex, toAdd);
 		System.out.println("\tList after .add(" + atIndex +", " + toAdd + ") called:\n\t" + testList);
 		assertEquals(toAdd, testList.get(atIndex), "Index " + atIndex + " does not equal the added value, " + toAdd + ".");
-		for (int i = 1; i < IntArrayList.DEFAULT_CAPACITY; i++) {
+		for (int i = 1; i < IntArrayList.DEFAULT_CAPACITY + 1; i++) {
 			assertEquals(i - 1, testList.get(i), "Index " + i + " failed test.");
 		}
 	}
