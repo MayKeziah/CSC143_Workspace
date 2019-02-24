@@ -70,14 +70,14 @@ public class IntArrayList {
 	}
 	
 	public void remove(int index) { //TODO: add a handler for invalid index values
-		
+		shiftLeft(index);
 	}
 	
 
 	// shiftLeft: Shifts the contents of an integer list to the left by one position, moving the first element to the last position.
 	// index: the index to shift onto.
 	public void shiftLeft(int index) {
-		while(index <= size) {
+		while(index < size) {
 			element[index-1] = element[index];
 			index++;
 		}
