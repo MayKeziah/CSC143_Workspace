@@ -150,6 +150,9 @@ public class IntArrayList {
 	 * */
 	public String toString() {
 		String toReturn = "[";
+		if(size == 0) {
+			return toReturn + "]";
+		}
 		for (int i = 0; i < size - 1; i++) {
 			toReturn += element[i] + ", ";
 		}
