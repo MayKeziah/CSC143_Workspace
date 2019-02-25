@@ -32,7 +32,6 @@ public class IntArrayList {
 	public static int NOT_FOUND = -1;
 	
 	/**
-	 * Default Constructor:
 	 * <br> Sets the capacity of the IntArrayList to default (10).
 	 * */
 	public IntArrayList() {
@@ -40,7 +39,6 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * Constructor:
 	 * <br> cannot accept negative numbers.
 	 * 
 	 * @param capacity sets the capacity of the IntArrayList to the given integer.
@@ -52,7 +50,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * Add Method: (mutator)
+	 * (mutator)
 	 * <br> Appends an integer value to the end of the IntArrayList.
 	 * <br> Ensures the internal data structure grows as needed to store added integers. 
 	 * 
@@ -63,7 +61,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * Add Method: (mutator)
+	 * (mutator)
 	 * <br> Inserts the given value at the given index in the IntArrayList.
 	 * <br> Shifts all subsequent values to the right one position.
 	 * <br> Ensures the internal data structure grows as needed to store added values. 
@@ -82,7 +80,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * checkNegative for add(int, int), remove(int), this(int): (private-helper method) 
+	 * (private-helper method) 
 	 * <br> checks if the given number is negative. If yes, it throws an exception. If no, it does nothing.
 	 * <br> checks if the given number is out of the valid range. If yes, it throws an exception. If no, it does nothing.
 	 * */
@@ -95,7 +93,7 @@ public class IntArrayList {
 	}
 
 	/**
-	 * expand for add(int, int): (private-mutator-helper method) 
+	 * (private-mutator-helper method) 
 	 * <br> Increases the capacity of the internal data structure.
 	 * */
 	private void expand() {
@@ -107,7 +105,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * Get Method: (accessor)
+	 * (accessor)
 	 * <br> Returns the value stored at the given index location.
 	 * <br> Does not accept negative numbers or numbers greater than or equal to the number of stored values.
 	 *  
@@ -120,7 +118,6 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * IndexOf Method: 
 	 * <br> searches for the location (index) of a given value and returns that location.
 	 * 
 	 * @param value the value to search for
@@ -144,7 +141,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * Remove Method: (mutator)
+	 * (mutator)
 	 * <br> Removes the value at the given location.
 	 * <br> Shifts all subsequent values to the left one position.
 	 * <br> Does not accept negative numbers or numbers greater than or equal to the number of stored values. 
@@ -158,7 +155,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * shiftLeft for remove(int): (private-mutator-helper method) 
+	 * (private-mutator-helper method) 
 	 * <br> Shifts the contents of an integer list to the left by one position from the given index
 	 * <br> moving the subsequent elements over the given index.
 	 * 
@@ -172,7 +169,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * shiftRight for add(int, int): (private-mutator-helper method) 
+	 * (private-mutator-helper method) 
 	 * <br> Shifts the contents of 'element' to the right by one position from the given index to element indexed at size. 
 	 * <br> fills the given index location with the given value.
 	 * 
@@ -187,7 +184,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * Size method: (accessor)
+	 * (accessor)
 	 * 
 	 * @return The number of locations (size) occupied in the IntArrayList.
 	 * */
@@ -196,7 +193,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * toString Method: (accessor)
+	 * (accessor)
 	 * 
 	 * @return a string representation of the IntArrayList in form: "[0, 1, . . . , size-1]"
 	 * */
