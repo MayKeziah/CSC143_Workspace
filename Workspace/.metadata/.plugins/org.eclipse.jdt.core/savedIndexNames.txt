@@ -1,15 +1,15 @@
 INDEX VERSION 1.131+C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\.metadata\.plugins\org.eclipse.jdt.core
 2707772164.index
 326805980.index
-4170144010.index
 1312391394.index
+4170144010.index
 3833992531.index
 4289135590.index
 625035504.index
 1897653901.index
 1717871126.index
-3886402465.index
 2679711292.index
+3886402465.index
 1893304658.index
 2602967256.index
 1622776731.index
@@ -23,8 +23,8 @@ INDEX VERSION 1.131+C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Work
 2250951762.index
 398058497.index
 1708016169.index
-14682029.index
 1870878615.index
+14682029.index
 872282486.index
 2773834657.index
 3854475047.index

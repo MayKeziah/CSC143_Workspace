@@ -124,21 +124,29 @@ public class IntArrayList {
 	 * @return the location of the given value, -1 if not found.
 	 * */
 	public int indexOf(int value) {
-		int low = 0;
-		int high = element.length - 1;
-		int mid = (high + low)/2;
-		while(low <= high) { // Binary search algorithm
-			if(element[mid] == value) {	// If the middle index = the given value, return the index
-				return mid;
-			}if (element[mid] > value) {// If the middle index > value, search only the left half of the Array.
-				high = mid - 1;
-			}else { 					// If the middle index < value, search only the right half of the Array.
-				low = mid + 1;
+		for (int i = 0; i < size; i ++) {
+			if(element[i] == value) {
+				return i;
 			}
-			mid = (high + low)/2;		// Re-evaluate the middle index and repeat the algorithm.
 		}
-		return NOT_FOUND;				// If the value is not found, return -1.
+		return -1;
 	}
+//	public int indexOf(int value) {	    // If the array was sorted, I would use this.
+//		int low = 0;
+//		int high = element.length - 1;
+//		int mid = (high + low)/2;
+//		while(low <= high) { // Binary search algorithm
+//			if(element[mid] == value) {	// If the middle index = the given value, return the index
+//				return mid;
+//			}if (element[mid] > value) {// If the middle index > value, search only the left half of the Array.
+//				high = mid - 1;
+//			}else { 					// If the middle index < value, search only the right half of the Array.
+//				low = mid + 1;
+//			}
+//			mid = (high + low)/2;		// Re-evaluate the middle index and repeat the algorithm.
+//		}
+//		return NOT_FOUND;				// If the value is not found, return -1.
+//	}
 	
 	/**
 	 * (mutator)
