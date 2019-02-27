@@ -37,7 +37,29 @@ public class SelectionSort {
 	 *  @param data array of integers.
 	 ***************************************************************/
 	public static void selectionSort(int[] data) {
+		int minIdx;
+		int temp;
 		
+		//For each index in the array except the end value...
+		for (int i = 0; i < data.length - 1; i ++) {
+			minIdx = i;
+			
+			//Check to see if it is the min value.
+			for (int j = i + 1; j < data.length; j++) {
+				if (data[j] < data[minIdx]) {
+					minIdx = j;
+					
+				}
+			}
+			
+			//If it is not the min value, swap it with the min value.
+			if(minIdx != i) {
+				temp = data[i];
+				data[i] = data[minIdx];
+				data[minIdx] = temp;
+			}
+
+		}
 	}
 	
 }
