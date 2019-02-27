@@ -17,6 +17,7 @@ import version_01.IntArrayList;
  */
 class IntArrayListATest {
 	IntArrayList testList;
+	int sizeTest;
 
 	/**
 	 * Test method for {@link version_01.IntArrayList#IntArrayList()}.
@@ -24,11 +25,19 @@ class IntArrayListATest {
 	@Test
 	void testIntArrayList() {
 		System.out.println("---------------------------------------------------------------------------------------");
+		
+		//Create an IntArrayList with a default starting capacity
 		testList = new IntArrayList();
 		System.out.println("Test of Default Constructor:");
 		System.out.println("\tSize: " + testList.size());
+		
+		//Checks that the reference is not null
 		assertNotNull(testList);
+		
+		//Checks that the size is zero
 		assertEquals(0, testList.size());
+		
+		//Only prints if all tests pass
 		System.out.println("\nTest passed: object not null.");
 	}
 
@@ -38,12 +47,22 @@ class IntArrayListATest {
 	@Test
 	void testIntArrayListInt() {
 		System.out.println("---------------------------------------------------------------------------------------");
+		
+		//The initial capacity to set
 		int capacity = 20;
+		
+		//Create an IntArrayList with a specified starting capacity
 		testList = new IntArrayList(capacity);
 		System.out.println("Test of Constructor with specified capacity:");
 		System.out.println("\tSize: " + testList.size());
+		
+		//Checks that the reference is not null
 		assertNotNull(testList);
+		
+		//Checks that the size is zero
 		assertEquals(0, testList.size());
+		
+		//Only prints if all tests pass
 		System.out.println("\nTest passed: object not null.");
 	}
 
@@ -66,9 +85,11 @@ class IntArrayListATest {
 		testList.add(toAdd);
 		System.out.println("\tList after .add(" + toAdd+ ") called:\n\t" + testList);
 		
-		//TODO
+		//Check that the append was successful
 		assertEquals(toAdd, testList.get(0), "Index " + 0 + " does not equal the added value.");
 		assertEquals(testList.size(), 1);
+		
+		//Only prints if all tests pass
 		System.out.println("\nTest passed: Value added, size incremented.");
 	}
 
@@ -98,7 +119,7 @@ class IntArrayListATest {
 			assertEquals(i, testList.get(i), "Index " + i + " failed test.");
 		}
 		
-		//Insert 'toAdd' at location: indexOf
+		//Attempt to insert 'toAdd' at location: indexOf
 		testList.add(atIndex, toAdd);
 		System.out.println("\tList after .add(" + atIndex +", " + toAdd + ") called:\n\t" + testList);
 		
@@ -136,7 +157,7 @@ class IntArrayListATest {
 		}
 		
 		//Initial size
-		int sizeTest = testList.size();
+		sizeTest = testList.size();
 		System.out.println("Test of Accessor method get(int):");	
 		System.out.println("\tStarting list generated:\n\t" + testList);
 		
@@ -169,8 +190,9 @@ class IntArrayListATest {
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) { 
 			testList.add(i); //All values equal their index
 		}
+		
 		//Initial size
-		int sizeTest = testList.size(); 
+		sizeTest = testList.size(); 
 		System.out.println("Test of Method indexOf(int):");	
 		System.out.println("\tStarting list generated:\n\t" + testList);
 		
@@ -196,18 +218,43 @@ class IntArrayListATest {
 	@Test
 	void testRemove() {
 		System.out.println("---------------------------------------------------------------------------------------");
-		int removeIndex = 0;
 		testList = new IntArrayList();
+		
+		//The index location of the value to remove
+		int removeIndex = 0;
+		
+		//Populated to size DEFAULT_CAPACITY, values set to index location
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
 			testList.add(i);
 		}
+		
+		//Initial size
+		sizeTest = testList.size();
 		System.out.println("Test of Mutator method remove(int):");	
 		System.out.println("\tInitial list generated:\n\t" + testList);
+		
+		//Attempt to remove the the value at location: removeIndex
 		testList.remove(removeIndex);
 		System.out.println("\tList after .remove(" + removeIndex + ") called:\n\t" + testList);
-		for (int i = 1; i < IntArrayList.DEFAULT_CAPACITY - 1; i++) {
+		
+		//Testing for expected size change
+		assertEquals(--sizeTest, testList.size()); 
+		
+		//Test that subsequent values are shifted to the left (expect index 0 - 8 to be 1 - 9).
+		for (int i = 1; i < IntArrayList.DEFAULT_CAPACITY; i++) {
 			assertEquals(i, testList.get(i - 1), "Index " + i + " failed test.");
 		}
+		
+		//Test remove for all remaining indecies (index 0 becomes 9)
+		for (int i = testList.size() - 2; i >= 0; i--) {
+			testList.remove(i);
+			
+			//Testing for expected size change
+			assertEquals(--sizeTest, testList.size()); 
+		}
+		
+		//Only prints if all tests pass
+		System.out.println("\nTest passed: remove function verified for all index values, size change confirmed.");
 	}
 
 	/**
@@ -217,16 +264,28 @@ class IntArrayListATest {
 	void testSize() {
 		System.out.println("---------------------------------------------------------------------------------------");
 		testList = new IntArrayList();
+		
+		//Test that initial size is 0
 		assertEquals(0, testList.size(), "Initial size does not equal 0.");
 
+		//Populated to size DEFAULT_CAPACITY, values set to index location
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
 			testList.add(i);
 		}
 		System.out.println("Test of Accessor method size():");	
 		System.out.println("\tStarting list generated:\n\t" + testList);
+		
+		//Tests for expected size change from 0 to DEFAULT_CAPACITY after add(int) called
 		assertEquals(IntArrayList.DEFAULT_CAPACITY, testList.size(), "Size does not equal the number of elements stored.");
 		System.out.println("\tList after .size(int) called:\n\t" + testList);
 		System.out.println("\tSize after .size(int) called:\n\t" + testList.size());
+		
+		//Test for expected size change from DEFAULT_CAPACITY to DEFAULT_CAPACITY - 1 when remove(int) is called
+		testList.remove(IntArrayList.DEFAULT_CAPACITY / 2);
+		assertEquals(IntArrayList.DEFAULT_CAPACITY - 1, testList.size(), "Size does not equal the number of elements stored.");
+		
+		//Only prints if all tests pass
+		System.out.println("\nTest passed: size confirmed for constructor, add(int), add(int, int), and remove(int).");
 	}
 
 	/**
@@ -236,14 +295,28 @@ class IntArrayListATest {
 	void testToString() {
 		System.out.println("---------------------------------------------------------------------------------------");
 		testList = new IntArrayList();
+		
+		//test that the returned string equals the expected return
+		assertEquals("[]", testList.toString(), "String returned by toString does not equal the desired String.");
+
+		
+		//Populated to size DEFAULT_CAPACITY, values set to index location
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
 			testList.add(i);
 		}
 		System.out.println("Test of Accessor method toString():");	
 		System.out.println("\tStarting list generated:\n\t" + testList);
+		
+		//test that the returned string equals the expected return
 		assertEquals("[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]", testList.toString(), "String returned by toString does not equal the desired String.");
 		System.out.println("\tList after .toString(int) called:\n\t" + testList);
 		System.out.println("\tSize after .toString(int) called:\n\t" + testList.size());
+		
+		//Test for expected size change from DEFAULT_CAPACITY to DEFAULT_CAPACITY - 1 when remove(int) is called
+		assertEquals(IntArrayList.DEFAULT_CAPACITY, testList.size(), "Size does not equal the number of elements stored.");
+
+		//Only prints if all tests pass
+		System.out.println("\nTest passed: returns expected string when full and when empty.");
 	}
 
 }

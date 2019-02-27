@@ -9,7 +9,7 @@
 <fullyQualifiedTypeName name="exercise01.Moveable"/>
 <fullyQualifiedTypeName name="exercise01.Writeable"/>
 <fullyQualifiedTypeName name="org.junit.jupiter.api.function.Executable"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="version_01.IntArrayList"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
