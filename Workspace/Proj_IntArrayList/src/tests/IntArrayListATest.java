@@ -70,26 +70,46 @@ class IntArrayListATest {
 	@Test
 	void testAddIntInt() {
 		System.out.println("---------------------------------------------------------------------------------------");
+		
+		//The value to add to the list
 		int toAdd = -5;
+		
+		//Will insert 'toAdd' at location: indexOf
 		int atIndex = 0;
 		testList = new IntArrayList();
+		
+		//Populated to size DEFAULT_CAPACITY, values set to index location
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
 			testList.add(i);
 		}
 		System.out.println("Test of Mutator method add(int, int):");	
 		System.out.println("\tStarting list generated:\n\t" + testList);
+		
+		//Test that all values equal their index location
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
 			assertEquals(i, testList.get(i), "Index " + i + " failed test.");
 		}
+		
+		//Insert 'toAdd' at location: indexOf
 		testList.add(atIndex, toAdd);
 		System.out.println("\tList after .add(" + atIndex +", " + toAdd + ") called:\n\t" + testList);
+		
+		//Test that toAdd was successfully added at atIndex 
 		assertEquals(toAdd, testList.get(atIndex), "Index " + atIndex + " does not equal the added value, " + toAdd + ".");
+		
+		//Test that the following values were shifted to the right one position
 		for (int i = 1; i < IntArrayList.DEFAULT_CAPACITY + 1; i++) {
 			assertEquals(i - 1, testList.get(i), "Index " + i + " failed test.");
 		}
+		
+		//Test that the size was incremented
 		assertEquals(IntArrayList.DEFAULT_CAPACITY + 1, testList.size());
+		
+		//Test at a middle index
 		testList.add(atIndex + 5, toAdd);
 		assertEquals(toAdd, testList.get(atIndex + 5), "Index " + atIndex + " does not equal the added value, " + toAdd + ".");
+		
+		//Only prints if all tests pass
 		System.out.println("\nTest passed: Value added at given index, size incremented.");
 
 	}
@@ -102,7 +122,7 @@ class IntArrayListATest {
 		System.out.println("---------------------------------------------------------------------------------------");
 		testList = new IntArrayList();
 		
-		//Populated to size DEFAULT_CAPACITY
+		//Populated to size DEFAULT_CAPACITY, values set to index location
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
 			testList.add(i);
 		}
@@ -137,7 +157,7 @@ class IntArrayListATest {
 		//A value not in the IntArrayList
 		int outOfRange = 200;
 		
-		//Populated to size DEFAULT_CAPACITY
+		//Populated to size DEFAULT_CAPACITY, values set to index location
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) { 
 			testList.add(i); //All values equal their index
 		}
