@@ -70,7 +70,7 @@ class IntArrayListATest {
 	@Test
 	void testAddIntInt() {
 		System.out.println("---------------------------------------------------------------------------------------");
-		int toAdd = 9;
+		int toAdd = -5;
 		int atIndex = 0;
 		testList = new IntArrayList();
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
@@ -87,6 +87,11 @@ class IntArrayListATest {
 		for (int i = 1; i < IntArrayList.DEFAULT_CAPACITY + 1; i++) {
 			assertEquals(i - 1, testList.get(i), "Index " + i + " failed test.");
 		}
+		assertEquals(IntArrayList.DEFAULT_CAPACITY + 1, testList.size());
+		testList.add(atIndex + 5, toAdd);
+		assertEquals(toAdd, testList.get(atIndex + 5), "Index " + atIndex + " does not equal the added value, " + toAdd + ".");
+		System.out.println("\nTest passed: Value added at given index, size incremented.");
+
 	}
 
 	/**
