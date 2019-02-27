@@ -12,6 +12,29 @@ package search;
  ****************************************************************************/
 public class LinearSearch {
 	
+	/***************************************************************
+	 *  creates a bit of tom foolery that attempts to generate
+	 *  an illogical randomized data set.
+	 *  @param numbers integer array
+	 ***************************************************************/
+	public static int[] dataSet(int n) {
+		long startTime = System.currentTimeMillis();
+		
+		//Creates an array of length n.
+		int[] data = new int[n];
+		
+		//Sets each value is equal to its index.
+		for (int i = 0; i < n; i++) {
+			data[i] = i;
+		}
+		
+		long endTime   = System.currentTimeMillis();
+		
+		System.out.print("DataSet:  n = " + n + "\t");
+		System.out.println("RunTime: " + (endTime - startTime) + " ms");
+		return data;
+	}
+
 	/******************************************************
 	 *  returns the index at which the given target value
 	 *  first appears in the given input array, or -1 if
@@ -47,6 +70,8 @@ public class LinearSearch {
 		
 		index      = indexOf(data, 8);
 		showLocation(index);
+		
+		testIndexOf();
 
 	}
 	
@@ -84,5 +109,63 @@ public class LinearSearch {
 		System.out.println();
 			
 	}
-
+	
+	public static void testIndexOf() {
+		System.out.println("Data Set - 1 to 8");
+		int[] data1  = dataSet(2000);
+		int[] data2  = dataSet(4000);
+		int[] data3  = dataSet(8000);
+		int[] data4  = dataSet(16000);
+		int[] data5  = dataSet(32000);
+		int[] data6  = dataSet(64000);
+		int[] data7  = dataSet(128000);
+		int[] data8  = dataSet(256000);
+		
+		System.out.println();
+		System.out.println("Data Set - 9 to 18 for Range 3 & Linear Search");
+		
+		int[] data9  = dataSet(512000);
+		int[] data10 = dataSet(1024000);
+		int[] data11 = dataSet(2048000);
+		int[] data12 = dataSet(4096000);
+		int[] data13 = dataSet(8192000);
+		int[] data14 = dataSet(16384000);
+		int[] data15 = dataSet(32768000);
+		int[] data16 = dataSet(65536000);
+		int[] data17 = dataSet(131072000);
+		int[] data18 = dataSet(262144000);
+		
+		System.out.println();
+		System.out.println("Linear Search: indexOf(int[], int) - Run Time Analysis");
+		timeLinearSearch(data1, 262144001);
+		timeLinearSearch(data2, 262144001);
+		timeLinearSearch(data3, 262144001);
+		timeLinearSearch(data4, 262144001);
+		timeLinearSearch(data5, 262144001);
+		timeLinearSearch(data6, 262144001);
+		timeLinearSearch(data7, 262144001);
+		timeLinearSearch(data8, 262144001);
+		timeLinearSearch(data9, 262144001);
+		timeLinearSearch(data10, 262144001);
+		timeLinearSearch(data11, 262144001);
+		timeLinearSearch(data12, 262144001);
+		timeLinearSearch(data13, 262144001);
+		timeLinearSearch(data14, 262144001);
+		timeLinearSearch(data15, 262144001);
+		timeLinearSearch(data16, 262144001);
+		timeLinearSearch(data17, 262144001);
+		timeLinearSearch(data18, 262144001);
+	}
+	
+	/***************************************************************
+	 *  approximates how long the method takes to run.
+	 *  @param numbers integer array
+	 ***************************************************************/
+	public static void timeLinearSearch(int[] numbers, int target) {
+		long startTime = System.currentTimeMillis();
+		indexOf(numbers, target);
+		long endTime   = System.currentTimeMillis();
+		System.out.print("DataSet:  n = " + numbers.length + "\t");
+		System.out.println("RunTime: " + (endTime - startTime) + " ms");
+	}
 }
