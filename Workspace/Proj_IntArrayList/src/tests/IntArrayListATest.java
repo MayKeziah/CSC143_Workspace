@@ -53,12 +53,20 @@ class IntArrayListATest {
 	@Test
 	void testAddInt() {
 		System.out.println("---------------------------------------------------------------------------------------");
+		
+		//The value to add to the list
 		int toAdd = 1;
+		
+		//Creates an IntArrayList object with no filled elements, DEFAULT_CAPACITY, and size = 0
 		testList = new IntArrayList();
 		System.out.println("Test of Mutator method add(int):");	
 		System.out.println("\tInitial list generated:\n\t" + testList);
+		
+		//Appending add attempt
 		testList.add(toAdd);
 		System.out.println("\tList after .add(" + toAdd+ ") called:\n\t" + testList);
+		
+		//TODO
 		assertEquals(toAdd, testList.get(0), "Index " + 0 + " does not equal the added value.");
 		assertEquals(testList.size(), 1);
 		System.out.println("\nTest passed: Value added, size incremented.");
