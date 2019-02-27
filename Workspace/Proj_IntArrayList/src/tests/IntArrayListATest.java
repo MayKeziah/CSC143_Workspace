@@ -104,6 +104,7 @@ class IntArrayListATest {
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
 			testList.add(i);
 		}
+		int sizeTest = testList.size();
 		System.out.println("Test of Accessor method get(int):");	
 		System.out.println("\tStarting list generated:\n\t" + testList);
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY - 1; i++) {
@@ -111,6 +112,8 @@ class IntArrayListATest {
 		}
 		System.out.println("\tList after .get(int) called:\n\t" + testList);
 		System.out.println("\tSize after .get(int) called:\n\t" + testList.size());
+		assertEquals(sizeTest, testList.size());
+		System.out.println("\nTest passed: Values returned for all indecies verified, size unchanged.");
 	}
 
 	/**
