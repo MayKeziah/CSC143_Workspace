@@ -123,17 +123,33 @@ class IntArrayListATest {
 	void testIndexOf() {
 		System.out.println("---------------------------------------------------------------------------------------");
 		testList = new IntArrayList();
+		
+		//A value not in the IntArrayList
 		int outOfRange = 200;
-		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
-			testList.add(i);
+		
+		//Populated to size DEFAULT_CAPACITY
+		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) { 
+			testList.add(i); //All values equal their index
 		}
+		//Initial size
+		int sizeTest = testList.size(); 
 		System.out.println("Test of Method indexOf(int):");	
 		System.out.println("\tStarting list generated:\n\t" + testList);
-		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY - 1; i++) {
+		
+		//Test that all elements populated are searchable
+		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY - 1; i++) { 
 			assertEquals(i, testList.indexOf(i), "Index " + i + " failed test.");
 		}
+		
+		//Test that a value not found returns NOT_FOUND
 		assertEquals(IntArrayList.NOT_FOUND, testList.indexOf(outOfRange), "Index-not-found failed test.");
 		System.out.println("\tList after .indexOf(int) called:\n\t" + testList);
+		
+		//Testing for unwanted size change
+		assertEquals(sizeTest, testList.size()); 
+		
+		//Only prints if all tests pass
+		System.out.println("\nTest passed: indecies returned for all values verified, size unchanged.");
 	}
 
 	/**
