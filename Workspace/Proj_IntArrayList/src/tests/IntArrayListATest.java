@@ -101,18 +101,28 @@ class IntArrayListATest {
 	void testGet() {
 		System.out.println("---------------------------------------------------------------------------------------");
 		testList = new IntArrayList();
+		
+		//Populated to size DEFAULT_CAPACITY
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY; i++) {
 			testList.add(i);
 		}
+		
+		//Initial size
 		int sizeTest = testList.size();
 		System.out.println("Test of Accessor method get(int):");	
 		System.out.println("\tStarting list generated:\n\t" + testList);
+		
+		//Test that returned values for get(int) at all indecies match expected values
 		for (int i = 0; i < IntArrayList.DEFAULT_CAPACITY - 1; i++) {
 			assertEquals(i, testList.get(i), "Index " + i + " failed test.");
 		}
 		System.out.println("\tList after .get(int) called:\n\t" + testList);
 		System.out.println("\tSize after .get(int) called:\n\t" + testList.size());
+		
+		//Testing for unwanted size change
 		assertEquals(sizeTest, testList.size());
+		
+		//Only prints if all tests pass
 		System.out.println("\nTest passed: Values returned for all indecies verified, size unchanged.");
 	}
 
