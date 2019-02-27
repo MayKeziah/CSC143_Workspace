@@ -42,6 +42,9 @@ class IntArrayListATest {
 		testList = new IntArrayList(capacity);
 		System.out.println("Test of Constructor with specified capacity:");
 		System.out.println("\tSize: " + testList.size());
+		assertNotNull(testList);
+		assertEquals(0, testList.size());
+		System.out.println("Test passed, object not null.");
 	}
 
 	/**
