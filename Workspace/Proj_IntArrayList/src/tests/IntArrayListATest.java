@@ -5,6 +5,8 @@ package tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.api.Test;
 
 import version_01.IntArrayList;
@@ -25,6 +27,9 @@ class IntArrayListATest {
 		testList = new IntArrayList();
 		System.out.println("Test of Default Constructor:");
 		System.out.println("\tSize: " + testList.size());
+		assertNotNull(testList);
+		assertEquals(0, testList.size());
+		System.out.println("Test passed, object not null.");
 	}
 
 	/**
