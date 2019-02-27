@@ -29,7 +29,7 @@ class IntArrayListATest {
 		System.out.println("\tSize: " + testList.size());
 		assertNotNull(testList);
 		assertEquals(0, testList.size());
-		System.out.println("Test passed, object not null.");
+		System.out.println("\nTest passed: object not null.");
 	}
 
 	/**
@@ -44,7 +44,7 @@ class IntArrayListATest {
 		System.out.println("\tSize: " + testList.size());
 		assertNotNull(testList);
 		assertEquals(0, testList.size());
-		System.out.println("Test passed, object not null.");
+		System.out.println("\nTest passed: object not null.");
 	}
 
 	/**
@@ -60,9 +60,8 @@ class IntArrayListATest {
 		testList.add(toAdd);
 		System.out.println("\tList after .add(" + toAdd+ ") called:\n\t" + testList);
 		assertEquals(toAdd, testList.get(0), "Index " + 0 + " does not equal the added value.");
-		for (int i = 1; i < testList.size(); i++) {
-			assertEquals(0, testList.get(i), "Index " + i + " failed test.");
-		}
+		assertEquals(testList.size(), 1);
+		System.out.println("\nTest passed: Value added, size incremented.");
 	}
 
 	/**
