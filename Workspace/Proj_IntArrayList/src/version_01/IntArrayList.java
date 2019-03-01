@@ -32,14 +32,14 @@ public class IntArrayList {
 	public static final int NOT_FOUND = -1;
 	
 	/**
-	 * <br> Sets the capacity of the IntArrayList to default (10).
+	 * Sets the capacity of the IntArrayList to default (10).
 	 * */
 	public IntArrayList() {
 		this(DEFAULT_CAPACITY);
 	}
 	
 	/**
-	 * <br> cannot accept negative numbers.
+	 * Cannot accept negative numbers.
 	 * 
 	 * @param capacity sets the capacity of the IntArrayList to the given integer.
 	 * */
@@ -118,7 +118,7 @@ public class IntArrayList {
 	}
 	
 	/**
-	 * <br> searches for the location (index) of a given value and returns that location.
+	 * Searches for the location (index) of a given value and returns that location.
 	 * 
 	 * @param value the value to search for
 	 * @return the location of the given value, -1 if not found.
