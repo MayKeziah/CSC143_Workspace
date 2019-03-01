@@ -10,7 +10,20 @@ public class InsertionSort {
 	 *  @param data array of integers.
 	 *****************************************************/
 	public static void insertionSort(int[] data) {
-		//TODO
+		//For all unsorted indecies...
+		for (int i = 1; i < data.length; i++) {
+			int j = i - 1;
+			int elt = data[i];
+			
+			//...if the element is less than the last element in the sorted list, shift right
+			while((j >= 0) && (data[j] > elt)) {
+				data[j+1] = data[j];
+				j--;
+			}
+			
+			//Insert the current element into the appropriate part of the list.
+			data[j+1] = elt;
+		}		
 	}
 	
 	/*********************************************

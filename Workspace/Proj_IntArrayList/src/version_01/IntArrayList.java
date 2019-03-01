@@ -24,12 +24,12 @@ public class IntArrayList {
 	/**
 	 * 	The initialized capacity for a default IntArrayList (10).
 	 * */
-	public static int DEFAULT_CAPACITY = 10; 
+	public static final int DEFAULT_CAPACITY = 10; 
 			
 	/**
 	 * The value returned if an element is not found in the IntArrayList (-1).
 	 * */
-	public static int NOT_FOUND = -1;
+	public static final int NOT_FOUND = -1;
 	
 	/**
 	 * <br> Sets the capacity of the IntArrayList to default (10).
