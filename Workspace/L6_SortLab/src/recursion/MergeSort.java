@@ -12,7 +12,7 @@ public class MergeSort {
 	 *  @param data unsorted array of  integer values
 	 ***************************************************************/
 	private static void merge(int[] data, int[] left, int[] right) {
-		
+		//TODO
 	}
 	
 	/*********************************************************
@@ -71,8 +71,12 @@ public class MergeSort {
 	 *  @param data unsorted array of integer values.
 	 * *************************************************************/
 	private static int[] splitLeft(int[] data) {
-		//insert split algorithm here
-		return new int[data.length];
+		int size = data.length / 2;
+		int[] leftHalf = new int[size];
+		for (int i = 0; i < size; i++) {
+			leftHalf[i] = data[i];
+		}
+		return leftHalf;
 	}
 	
 	/***************************************************************
@@ -80,6 +84,7 @@ public class MergeSort {
 	 *  @param data unsorted array of integer values.
 	 * *************************************************************/
 	private static int[] splitRight(int[] data) {
+		//TODO
 		//insert split algorithm here
 		return new int[data.length];
 	}
