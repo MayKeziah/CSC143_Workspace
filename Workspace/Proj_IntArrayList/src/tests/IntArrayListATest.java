@@ -18,13 +18,14 @@ import version_01.IntArrayList;
 class IntArrayListATest {
 	IntArrayList testList;
 	int sizeTest;
+	String breakLine = "---------------------------------------------------------------------------------------";
 
 	/**
 	 * Test method for {@link version_01.IntArrayList#IntArrayList()}.
 	 */
 	@Test
 	void testIntArrayList() {
-		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println(breakLine);
 		
 		//Create an IntArrayList with a default starting capacity
 		testList = new IntArrayList();
@@ -46,7 +47,7 @@ class IntArrayListATest {
 	 */
 	@Test
 	void testIntArrayListInt() {
-		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println(breakLine);
 		
 		//The initial capacity to set
 		int capacity = 20;
@@ -71,7 +72,7 @@ class IntArrayListATest {
 	 */
 	@Test
 	void testAddInt() {
-		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println(breakLine);
 		
 		//The value to add to the list
 		int toAdd = 1;
@@ -98,7 +99,7 @@ class IntArrayListATest {
 	 */
 	@Test
 	void testAddIntInt() {
-		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println(breakLine);
 		
 		//The value to add to the list
 		int toAdd = -5;
@@ -148,7 +149,7 @@ class IntArrayListATest {
 	 */
 	@Test
 	void testGet() {
-		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println(breakLine);
 		testList = new IntArrayList();
 		
 		//Populated to size DEFAULT_CAPACITY, values set to index location
@@ -180,7 +181,7 @@ class IntArrayListATest {
 	 */
 	@Test
 	void testIndexOf() {
-		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println(breakLine);
 		testList = new IntArrayList();
 		
 		//A value not in the IntArrayList
@@ -217,7 +218,7 @@ class IntArrayListATest {
 	 */
 	@Test
 	void testRemove() {
-		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println(breakLine);
 		testList = new IntArrayList();
 		
 		//The index location of the value to remove
@@ -262,7 +263,7 @@ class IntArrayListATest {
 	 */
 	@Test
 	void testSize() {
-		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println(breakLine);
 		testList = new IntArrayList();
 		
 		//Test that initial size is 0
@@ -293,7 +294,7 @@ class IntArrayListATest {
 	 */
 	@Test
 	void testToString() {
-		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println(breakLine);
 		testList = new IntArrayList();
 		
 		//test that the returned string equals the expected return
