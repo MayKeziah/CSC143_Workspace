@@ -39,7 +39,7 @@
 	<section name="javadoc">
 		<item value="public" key="access"/>
 		<item value="false" key="noindex"/>
-		<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\Proj_IntArrayList\javadoc.xml" key="antpath"/>
+		<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L4_RecursionB_Lab\javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="true" key="use"/>
 		<item value="false" key="author"/>
@@ -63,7 +63,12 @@
 			</section>
 			<section name="L4_RecursionB_Lab">
 				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L4_RecursionB_Lab\javadoc.xml" key="antpath"/>
-				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L4_RecursionB_Lab\doc" key="destdir"/>
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\JavaDocs" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="L6_SortLab">
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L6_SortLab\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L6_SortLab\doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 			<section name="Problem1">

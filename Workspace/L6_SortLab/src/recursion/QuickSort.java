@@ -22,7 +22,28 @@ public class QuickSort {
 	 * 	@param high index.
 	 ***************************************************************/
 	private static int partition(int[] data, int low, int high) {
-		return 0;
+		int p = data[(low + high)/2];
+		boolean finished = false;
+		
+		//Quick Sort the sub-array
+		while(!finished) {
+			while(data[low] < p) {
+				low++;
+			} while(data[high] > p) {
+				high--;
+			}if (high <= low) {
+				finished = true;
+			}else {
+				int temp = data[low];
+				data[low] = data[high];
+				data[high] = temp;
+				low++;
+				high--;
+			}
+
+		}
+		return high;
+	
 	}
 	
 	/*********************************************
@@ -57,10 +78,10 @@ public class QuickSort {
 	 * 	@param high index.  
 	 *****************************************************************/
 	private static void quickSort(int[] data, int low, int high) {
-		
+		if (low >= high) { //Do nothing
+			return;
+		}
 		int last;				// last item in low partition
-		
-		//insert base case etc.
 		
 		/*****************************************************************
 		 * partition: index
