@@ -25,15 +25,23 @@ public class QuickSort {
 		int p = data[(low + high)/2];
 		boolean finished = false;
 		
-		//Quick Sort the sub-array
+		//Quick Sort the sub-array until high and low are equal or have crossed.
 		while(!finished) {
+			
+			//If the low value is less than the pivot value, check the next value.
 			while(data[low] < p) {
 				low++;
-			} while(data[high] > p) {
+			} 
+			//if the high value is greater than the pivot value, check the next value.
+			while(data[high] > p) {
 				high--;
-			}if (high <= low) {
+			}
+			//If high and low are equal or have crossed, your sort is complete
+			if (high <= low) {
 				finished = true;
-			}else {
+			}
+			//Once you have an out of place high and low value, swap them. 
+			else {
 				int temp = data[low];
 				data[low] = data[high];
 				data[high] = temp;
@@ -42,6 +50,7 @@ public class QuickSort {
 			}
 
 		}
+		//The location of the high value becomes the last index of the next partition.
 		return high;
 	
 	}

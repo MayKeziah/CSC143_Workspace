@@ -12,7 +12,41 @@ public class MergeSort {
 	 *  @param data unsorted array of  integer values
 	 ***************************************************************/
 	private static void merge(int[] data, int[] left, int[] right) {
-		//TODO
+		//Current left index
+		int l = 0;
+		
+		//Current right index
+		int r = 0;
+		
+		//Current data index
+		int i = 0;
+		
+		//While there are more elements in both the left and right array...
+		while ((r < right.length) && (l < left.length)) {
+			
+			//Put the element with the smallest value in the next available position in data
+			if (left[l] < right[r]) {
+				data[i] = left[l];
+				i++;
+				l++;
+			}else {
+				data[i] = right[r];
+				i++;
+				r++;
+			}
+		}
+		
+		//Once either the left or right array has no more elements to check, 
+		// iteratively add the remaining elements from the other array to data.
+		while (r < right.length) {
+			data[i] = right[r];
+			i++;
+			r++;
+		}while (l < left.length) {
+			data[i] = left[l];
+			i++;
+			l++;
+		}
 	}
 	
 	/*********************************************************
@@ -30,6 +64,7 @@ public class MergeSort {
 			 * *******************************************************/
 			int[] left  = splitLeft(data);
 			int[] right = splitRight(data);	
+
 			
 			/*********************************************************
 			 * recursion: two halves
@@ -44,7 +79,7 @@ public class MergeSort {
 			 * *******************************************************/
 			merge(data, left, right);
 			
-		}else if (data.length == 1){
+		}else{
 			System.out.println("End: one item array.");
 		}
 	}
@@ -84,9 +119,13 @@ public class MergeSort {
 	 *  @param data unsorted array of integer values.
 	 * *************************************************************/
 	private static int[] splitRight(int[] data) {
-		//TODO
-		//insert split algorithm here
-		return new int[data.length];
+		int len = data.length;
+		int start = len / 2;
+		int[] rightHalf = new int[len - start];
+		for (int i = 0; i < (len - start); i++) {
+			rightHalf[i] = data[i + start];
+		}
+		return rightHalf;
 	}
 	
 	/******************************************************
