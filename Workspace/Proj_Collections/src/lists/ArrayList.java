@@ -173,7 +173,11 @@ public class ArrayList<T> implements List<T> {
 		return size == 0;
 	}
 	
-	//TODO
+	/**
+	 * Returns an object that can be used to traverse the inner data structure's stored elements
+	 * 
+	 * @return an iterator to traverse this ArrayList
+	 * */
 	public Iterator<T> iterator(){
 		return new ArrayIterator(this);
 	}
