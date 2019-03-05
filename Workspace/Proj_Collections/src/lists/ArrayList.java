@@ -261,27 +261,49 @@ public class ArrayList<T> implements List<T> {
 		return toReturn + element[size-1] + "]";
 	}
 	
+	/**
+	 * Private inner iterator
+	 * */
 	private class ArrayIterator implements Iterator<T>{
 		private int 	index;			//Current position in the list
 		private boolean ableToRemove;	//able to remove now?
 
+		/**
+		 * Sets the index to zero and ableToRemove to false for this ArrayList
+		 * */
 		public ArrayIterator(ArrayList<T> list) {
 			index = 0;
 			ableToRemove = false;
 		}
 		
+		/**
+		 * Checks to see if the ArrayList has a next stored value
+		 * 
+		 * @return a boolean representation of whether or not the ArrayList has a next stored value
+		 * */
 		@Override
 		public boolean hasNext() {
 			return  index < size();
 		}
 
+		/**
+		 * Returns the next element in the ArrayList. If there are no more elements, it throws an exception.
+		 * 
+		 * @return the next element in the ArrayList
+		 * */
 		@Override
 		public T next() {
+			if (!hasNext()) {
+				throw new IndexOutOfBoundsException("The ArrayList has no more elements. Size = " + (index + 1));
+			}
 			index++;
 			ableToRemove = true;
 			return ArrayList.this.get(index);
 		}
 
+		/**
+		 * If ableToRemove is true, it removes the element at the current index, if false, it throws an exception.
+		 * */
 		@Override
 		public void remove() {
 			if(!ableToRemove) {
