@@ -284,12 +284,10 @@ public class ArrayList<T> implements List<T> {
 
 		@Override
 		public void remove() {
-			// TODO Auto-generated method stub
 			if(!ableToRemove) {
 				throw new IllegalStateException("Unable to remove item.");
 			}
 			ArrayList.this.remove(index);
-			
 		}
 		
 	}
