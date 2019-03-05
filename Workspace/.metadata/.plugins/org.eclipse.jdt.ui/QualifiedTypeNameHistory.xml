@@ -12,4 +12,5 @@
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="version_01.IntArrayList"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="utility.Iterator"/>
 </qualifiedTypeNameHistroy>
