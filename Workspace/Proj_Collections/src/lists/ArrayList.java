@@ -78,9 +78,7 @@ public class ArrayList<T> implements List<T> {
 	 * */
 	public void add(int index, T value) { 
 		checkIndex(index, size);
-		if (element.length == size) { // If there is no more room, ensureCapacity the data-structure.
-			ensureCapacity();
-		}
+		ensureCapacity(size + 1);	  // ensureCapacity of the data-structure.
 		shiftRight(index, value); // Add the new value to the given index and shift the following values to the right.
 		size++;
 	}
@@ -124,16 +122,18 @@ public class ArrayList<T> implements List<T> {
 	}
 
 	/**
-	 * (private-mutator-helper method) 
-	 * <br> Increases the capacity of the internal data structure.
+	 * (mutator-helper method) 
+	 * <br> Increases the capacity of the internal data structure if the elements you are trying to add exceed capacity.
 	 * */
-	@SuppressWarnings("unchecked")
-	private void ensureCapacity() {
-		T[] temp = (T[]) new Object[element.length * 2 + 1]; // Create a new Array with more room
-		for (int i = 0; i < size; i++) { // Copy the current array to the new array
-			temp[i] = element[i];
+	@SuppressWarnings("unchecked") 
+	public void ensureCapacity(int capacity) {
+		if(capacity > element.length) {
+			T[] temp = (T[]) new Object[capacity * 2 + 1]; // Create a new Array with more room
+			for (int i = 0; i < size; i++) { // Copy the current array to the new array
+				temp[i] = element[i];
+			}
+			element = temp; 
 		}
-		element = temp; 
 	}
 	
 	/**
