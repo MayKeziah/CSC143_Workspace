@@ -3,6 +3,8 @@
  */
 package lists;
 
+import utility.Iterator;
+
 /**
  * <p> An ArrayList is a data structure for storing and manipulating a set of Objects.
  * 
@@ -38,13 +40,17 @@ public class ArrayList<T> implements List<T> {
 	}
 	
 	/**
-	 * Cannot accept negative numbers.
+	 * Cannot accept negative values.
 	 * 
 	 * @param capacity sets the capacity of the ArrayList to the given integer.
 	 * */
 	@SuppressWarnings("unchecked")
 	public ArrayList(int capacity) {	
-		checkOutRange(capacity, capacity);
+		
+		//Precondition: Capacity cannot be negative
+		checkIndex(capacity, capacity);
+		
+		//Postcondition: instantiate element and size
 		element = (T[]) new Object[capacity];
 		size = 0;
 	}
@@ -71,9 +77,9 @@ public class ArrayList<T> implements List<T> {
 	 * @param value the value to add to the list.
 	 * */
 	public void add(int index, T value) { 
-		checkOutRange(index, size);
-		if (element.length == size) { // If there is no more room, expand the data-structure.
-			expand();
+		checkIndex(index, size);
+		if (element.length == size) { // If there is no more room, ensureCapacity the data-structure.
+			ensureCapacity();
 		}
 		shiftRight(index, value); // Add the new value to the given index and shift the following values to the right.
 		size++;
@@ -83,13 +89,38 @@ public class ArrayList<T> implements List<T> {
 	 * (private-helper method) 
 	 * <br> checks if the given number is negative. If yes, it throws an exception. If no, it does nothing.
 	 * <br> checks if the given number is greater than the valid range. If yes, it throws an exception. If no, it does nothing.
+	 * 
+	 * @param check the index to test
+	 * @param range the largest valid index value
 	 * */
-	private void checkOutRange(int check, int max) {
+	private void checkIndex(int check, int range) {
 		if(check < 0) { 
-			throw new IndexOutOfBoundsException("Index cannot be negative. Index = " + check);
-		}if(check > max) {
-			throw new IndexOutOfBoundsException("Index cannot be greater than valid range. Index = " + check + ", Max = " + max);
+			throw new IndexOutOfBoundsException("Value cannot be negative. Value = " + check);
+		}if(check > range) {
+			throw new IndexOutOfBoundsException("Value cannot be greater than valid range. Value = " + check + ", Max = " + range);
 		}
+	}
+	
+	/**
+	 * Clears the list of all elements, the size is set to zero.
+	 * */
+	public void clear() {
+		for(int i = 0; i < size; i++) {
+			element[i] = null;
+		}
+		size = 0;
+	}
+	
+	/**
+	 * Searches for the given value in the ArrayList (using indexOf) and returns true if found, if not found, it returns false.
+	 * 
+	 * @param value the value to search for
+	 * @return the location of the given value, -1 if not found.
+	 * */
+	public boolean contains(T value) {
+		if (indexOf(value) != -1) {
+			return true;
+		}return false;
 	}
 
 	/**
@@ -97,8 +128,8 @@ public class ArrayList<T> implements List<T> {
 	 * <br> Increases the capacity of the internal data structure.
 	 * */
 	@SuppressWarnings("unchecked")
-	private void expand() {
-		T[] temp = (T[]) new Object[size + DEFAULT_CAPACITY]; // Create a new Array with more room
+	private void ensureCapacity() {
+		T[] temp = (T[]) new Object[element.length * 2 + 1]; // Create a new Array with more room
 		for (int i = 0; i < size; i++) { // Copy the current array to the new array
 			temp[i] = element[i];
 		}
@@ -114,12 +145,12 @@ public class ArrayList<T> implements List<T> {
 	 * @return the value stored at the given index.
 	 * */
 	public T get(int index) {
-		checkOutRange(index, size - 1);
+		checkIndex(index, size - 1);
 		return element[index];
 	}
 	
 	/**
-	 * Searches for the location (index) of a given value and returns that location.
+	 * Searches for a given value in the ArrayList and returns its location if found, if not found, it returns -1.
 	 * 
 	 * @param value the value to search for
 	 * @return the location of the given value, -1 if not found.
@@ -134,6 +165,20 @@ public class ArrayList<T> implements List<T> {
 	}
 	
 	/**
+	 * Checks to see if there are any objects stored in the ArrayList.
+	 * 
+	 * @return a boolean to represent whether or not the ArrayList is empty.
+	 * */
+	public boolean isEmpty() {
+		return size == 0;
+	}
+	
+	//TODO
+	public Iterator<T> iterator(){
+		return new ArrayIterator(this);
+	}
+	
+	/**
 	 * (mutator)
 	 * <br> Removes the value at the given location.
 	 * <br> Shifts all subsequent values to the left one position.
@@ -142,15 +187,29 @@ public class ArrayList<T> implements List<T> {
 	 * @param index the location of the value to remove.
 	 * */
 	public void remove(int index) { 
-		checkOutRange(index, size - 1);
+		checkIndex(index, size - 1);
 		shiftLeft(index);
 		size--;
 	}
 	
 	/**
+	 * (mutator)
+	 * <br> Replaces the value at given index with the given value.
+	 * <br> Does not accept index values which are negative or greater than the number of stored elements. 
+	 * 
+	 * @param index the location of the value to replace.
+	 * @param value the value to add to the list.
+	 * */
+	public void set(int index, T value) {
+		checkIndex(index, size - 1);
+		element[index] = value;
+	}
+	
+	/**
 	 * (private-mutator-helper method) 
 	 * <br> Shifts the contents of an integer list to the left by one position starting at the given index
-	 * <br> moving the subsequent elements over the given index.
+	 *      moving the subsequent elements over the given index.
+	 * <br> Sets the last element to null.
 	 * 
 	 * @param index the index to shift onto.
 	 */
@@ -159,6 +218,7 @@ public class ArrayList<T> implements List<T> {
 			element[index] = element[index + 1];
 			index++;
 		}
+		element[size] = null;
 	}
 	
 	/**
@@ -199,5 +259,38 @@ public class ArrayList<T> implements List<T> {
 			toReturn += element[i] + ", ";
 		}
 		return toReturn + element[size-1] + "]";
+	}
+	
+	private class ArrayIterator implements Iterator<T>{
+		private int 	index;			//Current position in the list
+		private boolean ableToRemove;	//able to remove now?
+
+		public ArrayIterator(ArrayList<T> list) {
+			index = 0;
+			ableToRemove = false;
+		}
+		
+		@Override
+		public boolean hasNext() {
+			return  index < size();
+		}
+
+		@Override
+		public T next() {
+			index++;
+			ableToRemove = true;
+			return ArrayList.this.get(index);
+		}
+
+		@Override
+		public void remove() {
+			// TODO Auto-generated method stub
+			if(!ableToRemove) {
+				throw new IllegalStateException("Unable to remove item.");
+			}
+			ArrayList.this.remove(index);
+			
+		}
+		
 	}
 }
