@@ -15,7 +15,7 @@ public class InsertionSort {
 			int j = i - 1;
 			int elt = data[i];
 			
-			//...if the element is less than the last element in the sorted list, shift right
+			//... while the element is less than the next element in the sorted list, shift the list right one position
 			while((j >= 0) && (data[j] > elt)) {
 				data[j+1] = data[j];
 				j--;
