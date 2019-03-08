@@ -78,7 +78,7 @@ public class ArrayList<T> implements List<T> {
 	 * */
 	public void add(int index, T value) { 
 		checkIndex(index, size);
-		ensureCapacity(size + 1);	  // ensureCapacity of the data-structure.
+		ensureCapacity(size + 1); // ensureCapacity of the data-structure.
 		shiftRight(index, value); // Add the new value to the given index and shift the following values to the right.
 		size++;
 	}
@@ -116,19 +116,18 @@ public class ArrayList<T> implements List<T> {
 	 * @return the location of the given value, -1 if not found.
 	 * */
 	public boolean contains(T value) {
-		if (indexOf(value) != -1) {
-			return true;
-		}return false;
+		return indexOf(value) != -1;
 	}
 
 	/**
 	 * (mutator-helper method) 
 	 * <br> Increases the capacity of the internal data structure if the elements you are trying to add exceed capacity.
+	 * @param capacity the number of elements we plan to have stored. Ex. obj.size() + 3 (where 3 is the number of elements you want to add)
 	 * */
 	@SuppressWarnings("unchecked") 
 	public void ensureCapacity(int capacity) {
 		if(capacity > element.length) {
-			T[] temp = (T[]) new Object[capacity * 2 + 1]; // Create a new Array with more room
+			T[] temp = (T[]) new Object[capacity + 1]; // Create a new Array with more room
 			for (int i = 0; i < size; i++) { // Copy the current array to the new array
 				temp[i] = element[i];
 			}
@@ -157,7 +156,7 @@ public class ArrayList<T> implements List<T> {
 	 * */
 	public int indexOf(T value) {
 		for (int i = 0; i < size; i ++) {
-			if(element[i] == value) {
+			if(element[i].equals(value)) {
 				return i;
 			}
 		}
@@ -179,7 +178,7 @@ public class ArrayList<T> implements List<T> {
 	 * @return an iterator to traverse this ArrayList
 	 * */
 	public Iterator<T> iterator(){
-		return new ArrayIterator(this);
+		return new ArrayIterator();
 	}
 	
 	/**
@@ -275,8 +274,8 @@ public class ArrayList<T> implements List<T> {
 		/**
 		 * Sets the index to zero and ableToRemove to false for this ArrayList
 		 * */
-		public ArrayIterator(ArrayList<T> list) {
-			index = 0;
+		public ArrayIterator() {
+			index 		 = 0;
 			ableToRemove = false;
 		}
 		
@@ -298,11 +297,11 @@ public class ArrayList<T> implements List<T> {
 		@Override
 		public T next() {
 			if (!hasNext()) {
-				throw new IndexOutOfBoundsException("The ArrayList has no more elements. Size = " + (index + 1));
+				throw new IndexOutOfBoundsException("The ArrayList has no more elements. Size = " + size());
 			}
 			index++;
 			ableToRemove = true;
-			return ArrayList.this.get(index);
+			return get(index - 1);
 		}
 
 		/**
@@ -313,7 +312,9 @@ public class ArrayList<T> implements List<T> {
 			if(!ableToRemove) {
 				throw new IllegalStateException("Unable to remove item.");
 			}
-			ArrayList.this.remove(index);
+			ArrayList.this.remove(index - 1);
+			index--;
+			ableToRemove = false;
 		}
 		
 	}

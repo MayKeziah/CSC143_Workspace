@@ -13,4 +13,6 @@
 <fullyQualifiedTypeName name="version_01.IntArrayList"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="utility.Iterator"/>
+<fullyQualifiedTypeName name="lists.ArrayList"/>
+<fullyQualifiedTypeName name="lists.List"/>
 </qualifiedTypeNameHistroy>
