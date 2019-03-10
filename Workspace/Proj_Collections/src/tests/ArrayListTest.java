@@ -6,6 +6,7 @@ package tests;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -17,17 +18,22 @@ import lists.ArrayList;
  * @author E
  *
  */
-class ArrayListTest {
+class ArrayListTest { //TODO: add iterator test
 	ArrayList<String> sList;
+	String s;
 
 	/**
 	 * Test method for {@link lists.ArrayList#ArrayList()}.
 	 */
 	@Test
 	final void testArrayList() {
-		sList = new ArrayList<String>();
- 
 		
+		/**
+		 * Post-Conditions:
+		 * <br> accepts children of the Object class as type parameters 
+		 * 		and creates an object reference that is not null.
+		 * */
+		sList = new ArrayList<String>();
 		assertNotNull(sList);
 
 	}
@@ -37,8 +43,16 @@ class ArrayListTest {
 	 */
 	@Test
 	final void testArrayListInt() {
-		sList = new ArrayList<String>(5);
+		/**
+		 * Pre-Conditions:
+		 * <br> capacity less than zero throws exception.
+		 * */
+		assertThrows(IndexOutOfBoundsException.class, () -> new ArrayList<String>(-1));
 		
+		/**
+		 * Post-Conditions:
+		 * */
+		sList = new ArrayList<String>(5);
 		assertNotNull(sList);
 		
 	}
@@ -50,6 +64,9 @@ class ArrayListTest {
 	final void testAddT() {
 		sList = new ArrayList<String>();
 		
+		/**
+		 * Post-Conditions:
+		 * */
 		sList.add("String 1");
 		
 		assertEquals(sList.size(), 1);
@@ -66,7 +83,19 @@ class ArrayListTest {
 	@Test
 	final void testAddIntT() {
 		sList = new ArrayList<String>();
-		String s = "s";
+		
+		/**
+		 * Pre-Conditions:
+		 * <br> index greater than size throws exception.
+		 * <br> index less than zero throws exception.
+		 * */
+		assertThrows(IndexOutOfBoundsException.class, () -> sList.add(3, "Fails"));
+		assertThrows(IndexOutOfBoundsException.class, () -> sList.add(-1, "Fails"));
+		
+		/**
+		 * Post-Conditions:
+		 * */
+		s = "s";
 		sList.add(s);
 		for(int i = 1; i < 5; i++) {
 			s += "s";
@@ -95,7 +124,11 @@ class ArrayListTest {
 	@Test
 	final void testClear() {
 		sList = new ArrayList<String>();
-		String s = "s";
+		
+		/**
+		 * Post-Conditions:
+		 * */
+		s = "s";
 		for(int i = 1; i < 5; i++) {
 			sList.add(s + i);
 			assertEquals(sList.get(i - 1), s + i);
@@ -112,7 +145,11 @@ class ArrayListTest {
 	@Test
 	final void testContains() {
 		sList = new ArrayList<String>();
-		String s = "s";
+		
+		/**
+		 * Post-Conditions:
+		 * */
+		s = "s";
 		for(int i = 1; i < 5; i++) {
 			sList.add(s + i);
 			assertEquals(sList.get(i - 1), s + i);
@@ -128,9 +165,18 @@ class ArrayListTest {
 	@Test
 	final void testEnsureCapacity() {
 		sList = new ArrayList<String>();
- 
 		
-		fail("Not yet implemented"); // TODO
+		/**
+		 * Post-Conditions:
+		 * */
+		for (int i = 0; i < 10; i++) {
+			sList.add("" + i);
+		}
+		assertEquals(10, sList.size());
+		sList.add("greater than capacity");
+		assertEquals(11, sList.size());
+		assertEquals(sList.toString(), "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, greater than capacity]");
+ 
 	}
 
 	/**
@@ -139,9 +185,23 @@ class ArrayListTest {
 	@Test
 	final void testGet() {
 		sList = new ArrayList<String>();
- 
+		/**
+		 * Pre-Conditions:
+		 * <br> index greater than size throws exception.
+		 * <br> index less than zero throws exception.
+		 * */
+		assertThrows(IndexOutOfBoundsException.class, () -> sList.get(3));
+		assertThrows(IndexOutOfBoundsException.class, () -> sList.get(-1));
 		
-		fail("Not yet implemented"); // TODO
+		/**
+		 * Post-Conditions:
+		 * */
+		s = "string";
+		for(int i = 1; i < 5; i++) {
+			sList.add(s + i);
+			assertEquals(sList.get(i - 1), s + i);
+		}
+		
 	}
 
 	/**
@@ -150,9 +210,19 @@ class ArrayListTest {
 	@Test
 	final void testIndexOf() {
 		sList = new ArrayList<String>();
- 
 		
-		fail("Not yet implemented"); // TODO
+		/**
+		 * Post-Conditions:
+		 * */
+		s = "string";
+		for(int i = 1; i < 5; i++) {
+			sList.add(s + i);
+			assertEquals(sList.indexOf(s + i), i - 1);
+		}
+		assertEquals(sList.indexOf("Fail"), -1);
+
+		
+		
 	}
 
 	/**
@@ -161,9 +231,19 @@ class ArrayListTest {
 	@Test
 	final void testIsEmpty() {
 		sList = new ArrayList<String>();
- 
 		
-		fail("Not yet implemented"); // TODO
+		/**
+		 * Post-Conditions:
+		 * */
+		assertTrue(sList.isEmpty());
+		sList.add("Hello World");
+		assertFalse(sList.isEmpty());
+		sList.add("Goodbye World");
+		sList.remove(1);
+		assertFalse(sList.isEmpty());
+		sList.clear();
+		assertTrue(sList.isEmpty());
+		
 	}
 
 	/**
@@ -172,9 +252,13 @@ class ArrayListTest {
 	@Test
 	final void testIterator() {
 		sList = new ArrayList<String>();
+		
+		/**
+		 * Post-Conditions:
+		 * */
  
 		
-		fail("Not yet implemented"); // TODO
+		fail("Not yet implemented"); // TODO: Iterator test
 	}
 
 	/**
@@ -183,9 +267,28 @@ class ArrayListTest {
 	@Test
 	final void testRemove() {
 		sList = new ArrayList<String>();
- 
+		/**
+		 * Pre-Conditions:
+		 * <br> index greater than size throws exception.
+		 * <br> index less than zero throws exception.
+		 * */
+		assertThrows(IndexOutOfBoundsException.class, () -> sList.remove(3));
+		assertThrows(IndexOutOfBoundsException.class, () -> sList.remove(-1));
 		
-		fail("Not yet implemented"); // TODO
+		/**
+		 * Post-Conditions:
+		 * */
+		s = "string";
+		for(int i = 1; i < 5; i++) {
+			sList.add(s + i);
+			assertEquals(sList.get(i - 1), s + i);
+			assertEquals(sList.size(), i);
+		}for (int j = 0; j < 4; j++) {
+			sList.remove(0);
+			assertEquals(sList.size(), 3 - j);
+		}
+		assertTrue(sList.isEmpty());
+ 
 	}
 
 	/**
@@ -194,9 +297,26 @@ class ArrayListTest {
 	@Test
 	final void testSet() {
 		sList = new ArrayList<String>();
- 
+		/**
+		 * Pre-Conditions:
+		 * <br> index greater than size throws exception.
+		 * <br> index less than zero throws exception.
+		 * */
+		assertThrows(IndexOutOfBoundsException.class, () -> sList.set(3, "Fails"));
+		assertThrows(IndexOutOfBoundsException.class, () -> sList.set(-1, "Fails"));
+		/**
+		 * Post-Conditions:
+		 * */
+		s = "string";
+		for(int i = 1; i < 5; i++) {
+			sList.add(s + i);
+			assertEquals(sList.get(i - 1), s + i);
+			assertEquals(sList.size(), i);
+			sList.set(i - 1, "Muahaha!" + i);
+			assertEquals(sList.get(i - 1), "Muahaha!" + i);
+			assertEquals(sList.size(), i);
+		}
 		
-		fail("Not yet implemented"); // TODO
 	}
 
 	/**
@@ -205,9 +325,19 @@ class ArrayListTest {
 	@Test
 	final void testSize() {
 		sList = new ArrayList<String>();
- 
 		
-		fail("Not yet implemented"); // TODO
+		/**
+		 * Post-Conditions:
+		 * */
+		assertEquals(sList.size(), 0);
+		sList.add("Hello World");
+		assertEquals(sList.size(), 1);
+		sList.add("Goodbye World");
+		sList.remove(1);
+		assertEquals(sList.size(), 1);
+		sList.clear();
+		assertEquals(sList.size(), 0);
+		
 	}
 
 	/**
@@ -216,9 +346,18 @@ class ArrayListTest {
 	@Test
 	final void testToString() {
 		sList = new ArrayList<String>();
- 
 		
-		fail("Not yet implemented"); // TODO
+		/**
+		 * Post-Conditions:
+		 * */
+		s = "s";
+		sList.add(s);
+		for(int i = 1; i < 5; i++) {
+			s += "s";
+			sList.add(s);
+		}
+		assertEquals(sList.toString(), "[s, ss, sss, ssss, sssss]");
+		
 	}
 
 }
