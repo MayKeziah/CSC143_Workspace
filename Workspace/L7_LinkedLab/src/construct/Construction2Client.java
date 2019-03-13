@@ -22,6 +22,15 @@ public class Construction2Client {
 		System.out.println();
 		System.out.println("--------build A -------");
 		Node aNode = new Node();
+		aNode.data = 1;
+		aNode.next = new Node();
+		aNode.next.data = 3;
+		aNode.next.next = new Node();
+		aNode.next.next.data = 6;
+		aNode.next.next.next = new Node();
+		aNode.next.next.next.data = 8;
+		aNode.next.next.next.next = new Node();
+		aNode.next.next.next.next.data = 9;
 		
 		return aNode;
 	}
@@ -33,9 +42,13 @@ public class Construction2Client {
 	public static Node buildB() {
 		System.out.println();
 		System.out.println("--------build B -------");
+		Node aNode = new Node(2);
+		aNode.next = new Node(3);
+		aNode.next.next = new Node(6);
+		aNode.next.next.next = new Node(7);
+		aNode.next.next.next.next = new Node(9);
 		
-		
-		return new Node();
+		return aNode;
 	}
 	
 	/*********************************************************
@@ -45,7 +58,9 @@ public class Construction2Client {
 	public static Node buildC() {
 		System.out.println();
 		System.out.println("-------- build C -------");
-		return new Node();
+		Node aNode = new Node(3, new Node(5, new Node(6, new Node(8, new Node(9)))));
+
+		return aNode;
 	}
 	
 	/********************************************************
