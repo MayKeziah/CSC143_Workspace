@@ -41,11 +41,7 @@ public class Student {
 	 * @return 1 if the first student's first name comes alphabetically before than the second, 0 is they are the same, and otherwise, -1.
 	 */
 	public static int compareByFirstName(Student s1, Student s2) {
-		if (s1.getFirstName() > s2.getFirstName()) { // s1 is older
-			return 1;
-		} if (s1.getFirstName() == s2.getFirstName()) { // Same age
-			return 0;
-		} return -1; // s1 is younger
+		return s1.getFirstName().compareTo(s2.getFirstName());
 	}	
 	
 	/**
@@ -54,7 +50,11 @@ public class Student {
 	 * @return 1 if the first student's GPA is greater than the second, 0 is they are equal, and otherwise, -1.
 	 */
 	public static int compareByGPA(Student s1, Student s2) {
-		return 0; //TODO
+		if (s1.getGPA() > s2.getGPA()) { // s1 is older
+			return 1;
+		} if (s1.getGPA() == s2.getGPA()) { // Same age
+			return 0;
+		} return -1; // s1 is younger
 	}
 	
 	/**
@@ -62,7 +62,7 @@ public class Student {
 	 * @return 1 if the student's last name is greater than the passed student, 0 is they are the same, and otherwise, -1.
 	 */
 	public int compareTo(Student stud) {
-		return 0; //TODO
+		return getLastName().compareTo(stud.getLastName());
 	}
 	
 	/**
@@ -70,10 +70,11 @@ public class Student {
 	 * @return returns true if the object passed is a Student object and has the same stored information as the current Student.
 	 */
 	public boolean equals(Object other) {
-		if (   (compareByAge	  (this, (Student) other) != 0)
-			&& (compareByFirstName(this, (Student) other) != 0)
-			&& (compareByGPA	  (this, (Student) other) != 0)
-			&& (compareTo		  		((Student) other) != 0)) 
+		if (   !(other instanceof Student)
+			|| (compareByAge	  (this, (Student) other) != 0)
+			|| (compareByFirstName(this, (Student) other) != 0)
+			|| (compareByGPA	  (this, (Student) other) != 0)
+			|| (compareTo		  		((Student) other) != 0)) 
 		{
 			return false;
 		}
@@ -88,10 +89,10 @@ public class Student {
 	}
 
 	/**
-	 * @return the student's first name
+	 * @return the first name
 	 */
 	public String getFirstName() {
-		return ""; //TODO
+		return name.split(" ")[0];
 	}
 
 	/**
@@ -102,10 +103,10 @@ public class Student {
 	}
 
 	/**
-	 * @return the student's first name
+	 * @return the last name
 	 */
 	public String getLastName() {
-		return ""; //TODO
+		return name.split(" ")[1];
 	}
 
 	/**
@@ -116,7 +117,7 @@ public class Student {
 	}
 
 	/**
-	 * @return the name
+	 * @return the full name
 	 */
 	public String getName() {
 		return name;
@@ -128,7 +129,21 @@ public class Student {
 	public Rank getRank() {
 		return rank;
 	}
+	
+	/**
+	 * @return whether the student is on the deans list
+	 */
+	public boolean isOnDeansList() {
+		return gpa >= 3.8;
+	}	
 
+	/**
+	 * @return whether the student is on the deans list
+	 */
+	public boolean isOnProbation() {
+		return gpa < 2.0;
+	}	
+	
 	/**
 	 * @param age the age to set
 	 */
@@ -163,6 +178,31 @@ public class Student {
 	public void setRank(Rank rank) {
 		this.rank = rank;
 	}
+	
+	/**
+	 * @return a file-ready string presenting information about this student.
+	 */
+	public String toFile() {
+		return name + "," + age + "," + major + "," + rank + "," + gpa; //TODO
+	}	
+	
+	/**
+	 * @return a neatly formatted string presenting information about this student for a user.
+	 */
+	public String toString() {
+		String major = this.major.toString();
+		if (major.equals("COMPUTERSCIENCE")) {
+			major = "COMPUTER SCIENCE";
+		}
+		return 
+				"\nName:\t" + name +
+				"\nAge:\t" + age +
+				"\nRank:\t" + rank +
+				"\nMajor:\t" + major + 
+				"\nGPA:\t" + gpa +
+				"\nDeans List:\t" + isOnDeansList() + 
+				"\nOn Probation:\t" + isOnProbation(); 
+	}	
 
 	public static class Builder{
 		private String 	name;
