@@ -17,21 +17,22 @@ public class Node {
 	 * 	constructs a node with data = 0, link = null
 	 ******************************************************************** */
 	public Node() {
-		//update
+		this(0, null);
 	}
 	
 	/********************************************************************
 	 * 	constructs a node with given data , link = null
 	 ********************************************************************/
 	public Node(int data) {
-		//update
+		this(data, null);
 	}
 	
 	/********************************************************************
 	 * constructs a node with given data of type int 
 	 ********************************************************************/
 	public Node(int data, Node next) {
-		//update
+		this.data = data;
+		this.next = next;
 	}
 	
 }

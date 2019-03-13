@@ -13,13 +13,18 @@ public class Construction1Client {
 		front.next.data = 2;
 		front.next.next = new Node();
 		front.next.next.data = 4;
-		//update
+		front.next.next.next = new Node();
+		front.next.next.next.data = 5;
+		front.next.next.next.next = new Node();
+		front.next.next.next.next.data = 9;
 		
 		System.out.println();
 		System.out.print(front.data +" ");
 		System.out.print(front.next.data +" ");
 		System.out.print(front.next.next.data + " ");
-		//update
+		System.out.print(front.next.next.next.data + " ");
+		System.out.print(front.next.next.next.next.data + " ");
+
 	}
 
 }
