@@ -46,6 +46,8 @@ public class Construction3Client {
 		print(front);
 		printWhile(front);
 		printFor(front);
+		System.out.println("---------- -------- ----------");
+
 	}
 
 }
