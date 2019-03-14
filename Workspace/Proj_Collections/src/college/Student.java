@@ -151,40 +151,40 @@ public class Student {
 		return gpa < 2.0;
 	}	
 	
-	/**
-	 * @param age the age to set
-	 */
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	/**
-	 * @param gpa the gpa to set
-	 */
-	public void setGpa(double gpa) {
-		this.gpa = gpa;
-	}
-
-	/**
-	 * @param major the major to set
-	 */
-	public void setMajor(Major major) {
-		this.major = major;
-	}
-
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
-	 * @param rank the rank to set
-	 */
-	public void setRank(Rank rank) {
-		this.rank = rank;
-	}
+//	/**
+//	 * @param age the age to set
+//	 */
+//	public void setAge(int age) {
+//		this.age = age;
+//	}
+//
+//	/**
+//	 * @param gpa the gpa to set
+//	 */
+//	public void setGpa(double gpa) {
+//		this.gpa = gpa;
+//	}
+//
+//	/**
+//	 * @param major the major to set
+//	 */
+//	public void setMajor(Major major) {
+//		this.major = major;
+//	}
+//
+//	/**
+//	 * @param name the name to set
+//	 */
+//	public void setName(String name) {
+//		this.name = name;
+//	}
+//
+//	/**
+//	 * @param rank the rank to set
+//	 */
+//	public void setRank(Rank rank) {
+//		this.rank = rank;
+//	}
 	
 	/**
 	 * @return a file-ready string presenting information about this student.
