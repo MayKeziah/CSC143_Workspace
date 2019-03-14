@@ -11,8 +11,10 @@
 <fullyQualifiedTypeName name="org.junit.jupiter.api.function.Executable"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="version_01.IntArrayList"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="utility.Iterator"/>
 <fullyQualifiedTypeName name="lists.ArrayList"/>
 <fullyQualifiedTypeName name="lists.List"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="college.Major"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

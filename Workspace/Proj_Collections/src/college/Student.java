@@ -4,14 +4,17 @@
 package college;
 
 /**
+ * An stores information about a student.
+ * Allows students to be compared by several factors including age, name, and GPA.
+ * 
+ * @version 1.0
  * @author E
- *
  */
 public class Student {
 	private String name;
 	private int age;
-	private Rank rank;
-	private Major major;
+	private Rank rank; //Class Level
+	private Major major; //Area of study
 	private double gpa;
 	
 	public Student(Builder builder) {
@@ -70,11 +73,11 @@ public class Student {
 	 * @return returns true if the object passed is a Student object and has the same stored information as the current Student.
 	 */
 	public boolean equals(Object other) {
-		if (   !(other instanceof Student)
+		if (  !(other instanceof Student)
 			|| (compareByAge	  (this, (Student) other) != 0)
 			|| (compareByFirstName(this, (Student) other) != 0)
 			|| (compareByGPA	  (this, (Student) other) != 0)
-			|| (compareTo		  		((Student) other) != 0)) 
+			|| (compareTo		  	    ((Student) other) != 0)  ) 
 		{
 			return false;
 		}
@@ -106,7 +109,11 @@ public class Student {
 	 * @return the last name
 	 */
 	public String getLastName() {
-		return name.split(" ")[1];
+		if(name.split(" ").length > 1) {
+			return name.split(" ")[1];
+		}else {
+			return "UNKNOWN";
+		}
 	}
 
 	/**
@@ -227,6 +234,10 @@ public class Student {
 			this.age = age;
 			return this;
 		} 
+		public Builder setGPA(double gpa) {
+			this.gpa = gpa;
+			return this;
+		}
 		public Builder setRank(Rank rank) {
 			this.rank = rank;
 			return this;
