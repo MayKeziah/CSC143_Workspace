@@ -44,16 +44,9 @@ public class Rectangle implements Comparable<Rectangle>{
 	 * ****************************************************/
 	public static int compareDimensions(Rectangle r1, Rectangle r2) {
 		//update
-		if  (r1.getWidth() > r2.getWidth()) {
-			return 1;
-		} if(r1.getWidth() < r2.getWidth()) {
-			return -1;
-		} if(r1.getHeight() > r2.getHeight()) {
-			return 1;
-		} if(r1.getHeight() < r2.getHeight()) {
-			return -1;
-		}
-		return 0;
+		if  (r1.getWidth() == r2.getWidth()) {
+			return r1.getHeight() - r2.getHeight();
+		} 	return r1.getWidth()  - r2.getWidth();
 	}
 	
 	/******************************************************
@@ -62,12 +55,7 @@ public class Rectangle implements Comparable<Rectangle>{
 	 * ****************************************************/
 	public static int comparePerimeters(Rectangle r1, Rectangle r2) {
 		//update
-		if  (r1.perimeter() > r2.perimeter()) {
-			return 1;
-		} if(r1.perimeter() < r2.perimeter()) {
-			return -1;
-		}
-		return 0;
+		return r1.perimeter() - r2.perimeter();
 	}
 	
 	/*********************************************************
@@ -75,12 +63,7 @@ public class Rectangle implements Comparable<Rectangle>{
 	 * *******************************************************/
 	public int compareTo(Rectangle other) {
 		//update
-		if  (area() > other.area()) {
-			return 1;
-		} if(area() < other.area()) {
-			return -1;
-		}
-		return 0;
+		return area() - other.area();
 	}
 	
 	/******************************************************************
