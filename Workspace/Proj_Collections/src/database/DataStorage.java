@@ -105,9 +105,12 @@ public class DataStorage {
 	}
 	
 	/**
-	 * Reads this file and returns a database populated with all the students represented inside.
+	 * Reads this file and returns a database containing information about the students listed in the file.
+	 * This method does not add duplicates
 	 * Format must be as follows: (case is irrelevant)
 	 * <br> "FULL NAME,AGE,RANK,MAJOR,GPA"
+	 * 
+	 * 
 	 * 
 	 * @return the Student database generated from this file
 	 * @throws fileNotFoundException
@@ -116,8 +119,9 @@ public class DataStorage {
 		Scanner input 				= new Scanner(file); // The file reader
 		ArrayList<Student> database = new ArrayList<Student>(); // The database to generate and return.
 		Student next; // The next student to add
+		
 		/**
-		 * Create a student from each line and add them to the database.
+		 * Create a student from each line and add them to the database. Does not allow duplicates.
 		 * */
 		while(input.hasNextLine()) {
 			next = parse(input.nextLine());
@@ -161,6 +165,13 @@ public class DataStorage {
 		writer.close();
 	}
 	
+	/**
+	 * Writes information about each student in the given database to the saved file. 
+	 * The information will be neatly formatted such that it could be read a user.
+	 * 
+	 * @param file the file to set
+	 * @throws IOException 
+	 */
 	public void writeCS(ArrayList<Student> data) throws IOException{
 		PrintStream writer = new PrintStream(file);
 		for (int i = 0; i < data.size(); i++) {
