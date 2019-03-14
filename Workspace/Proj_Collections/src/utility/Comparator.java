@@ -7,6 +7,6 @@ package utility;
  * @author E
  *
  */
-public interface Comparator {
+public interface Comparator<T> {
 
 }
