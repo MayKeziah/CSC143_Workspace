@@ -12,6 +12,16 @@ public class RectangleClient {
 	 *	@param key comparator for sorting.
 	 *****************************************************************/
 	public static <T> void bubbleSort(ArrayList<T> list, Comparator<T> key) {
+		for (int i = 1; i < list.size(); i++) {
+			for (int j = 0; j < list.size() - i; j ++) {
+				
+				if (key.compare(list.get(j), list.get(j + 1)) > 0) {
+					T temp = list.get(j);
+					list.set(j, list.get(j + 1));
+					list.set(j + 1, temp);
+				}
+			}
+		}
 	}
 	
 	/**********************************************************
@@ -20,7 +30,12 @@ public class RectangleClient {
 	 *  @param key  Rectangle object to find
 	 *  @return index of value in list
 	 * ********************************************************/
-	public static int indexOf(ArrayList<Rectangle> list, Rectangle key) {
+	public static <T> int indexOf(ArrayList<Rectangle> list, Rectangle key) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).equals(key)) {
+				return i;
+			}
+		}
 		return -1;
 	}
 	
@@ -30,6 +45,20 @@ public class RectangleClient {
 	 *********************************************************/
 	public static <T extends Comparable<T>> 
 	void insertionSort(ArrayList<T> list) {
+		//For all unsorted indecies...
+		for (int i = 1; i < list.size(); i++) {
+			int j = i - 1;
+			T elt = list.get(i);
+			
+			//... while the element is less than the next element in the sorted list, shift the list right one position
+			while((j >= 0) && list.get(j).compareTo(elt) > 0) {
+				list.set(j + 1, list.get(j));
+				j--;
+			}
+			
+			//Insert the current element into the appropriate part of the list.
+			list.set(j + 1, elt);
+		}		
 	}
 	
 	/***********************************
@@ -51,6 +80,7 @@ public class RectangleClient {
 		System.out.println("------- dimensions --------");
 		//call the bubble sort method to sort by dimensions.
 		// Note: You can only use method references.
+		bubbleSort(list, Rectangle::compareDimensions);
 		
 		for(int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i) );
@@ -60,6 +90,7 @@ public class RectangleClient {
 		System.out.println("------- perimeters --------");
 		//call the bubble sort method to sort by perimeters.
 		// Note: You can only use method references.
+		bubbleSort(list, Rectangle::comparePerimeters);
 		
 		for(int i = 0; i < list.size(); i++) {
 			System.out.print(list.get(i) );

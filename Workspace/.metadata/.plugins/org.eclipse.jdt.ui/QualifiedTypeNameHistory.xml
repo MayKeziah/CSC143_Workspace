@@ -15,11 +15,11 @@
 <fullyQualifiedTypeName name="lists.List"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="college.Rank"/>
-<fullyQualifiedTypeName name="college.Major"/>
 <fullyQualifiedTypeName name="college.Student.Builder"/>
-<fullyQualifiedTypeName name="lists.ArrayList"/>
 <fullyQualifiedTypeName name="college.Student"/>
+<fullyQualifiedTypeName name="college.Major"/>
+<fullyQualifiedTypeName name="college.Rank"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="lists.ArrayList"/>
 </qualifiedTypeNameHistroy>
