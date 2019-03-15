@@ -1,0 +1,124 @@
+Lab Exercise VII: Question A.6
+
+Output for call 
+	transmitC(Message::Send);
+To method definition 
+	transmitC(Textable msg){..}
+via the interface header
+	public String message(String msg);
+using the method
+	public static String send(String text) {..}
+
+	(1) Static Method Reference
+	Entering transmit - Textable.
+	Welcome to the Texting Experience.  Enjoy!.
+	Textable Interface Used
+	Leaving transmit - Textable.
+
+Path as follows:
+ 1. Call to transmitC
+ 2. Enters transmitC
+ 3. Enters the Send method
+ 4. Returns to transmitC
+ 5. Returns to main
+
+----------------------------------------------------------------
+
+Output for call 
+	transmitC(String::toUpperCase);
+To method definition 
+	transmitC(Textable msg){..}
+via the interface header
+	public String message(String msg);
+using the method
+	public String toUpperCase(){..}
+
+	(2)  String Reference
+	Entering transmit - Textable.
+	TEXTABLE INTERFACE USED
+	Leaving transmit - Textable.
+
+Path as follows:
+ 1. Call to transmitC
+ 2. Enters transmitC
+ 3. Calls toUpperCase on the string msg
+ 4. Returns to transmitC
+ 5. Returns to main
+
+----------------------------------------------------------------
+
+Output for call 
+	transmitA(Message::broadcast);
+To method definition 
+	transmitA(Messageable msg) {..}
+via the interface header
+	public Message getMessage(String msg);
+using the method
+	public static Message broadcast(String msg) {
+
+	(3)  Message Class Reference
+	Entering transmit - Messageable.
+	Creating a new broadcast...THIS IS NEW!!! 
+	Message Constructor...messageable interface used...
+	Leaving transmit - Messageable.
+
+Path as follows:
+ 1. call to transmitA
+ 2. Enters transmitA
+ 3. Enters broadcast method
+ 4. Constructs message
+ 5. calls toUpperCase on the string msg
+ 6. returns to transmitA
+ 7. Returns to main
+
+----------------------------------------------------------------
+
+Output for call 
+	transmitA(Message::new);
+To method definition 
+	transmitA(Messageable msg) {..}
+via the interface header
+	public Message getMessage(String msg);
+using the constructor
+	public Message(String msg) {..}
+
+	(4) Constructor Reference
+	Entering transmit - Messageable.
+	Message Constructor...Messageable Interface Used...
+	Leaving transmit - Messageable.
+
+Path as follows:
+ 1. call to transmitA
+ 2. Enters transmitA
+ 3. constructs message
+ 6. returns to transmitA
+ 7. Returns to main
+
+----------------------------------------------------------------
+
+Output for call 
+	transmitB(Message::connect);
+To method definition 
+	transmitB(Sendable msg) {..}
+via the interface header
+	public void message(Message m, String s);
+using the method
+	public static void connect(Message m, String msg) {..}
+
+	(5)  Arbitrary Reference
+	Entering transmit - Sendable.
+	Message Constructor...transmiting. You are now connected....  
+	transmiting.  ...connects with...SENDABLE INTERFACE USED
+	 ...disconnect. 
+	Leaving transmit - Sendable.
+
+Path as follows:
+ 1. call to transmitB
+ 2. Enters transmitB
+ 3. constructs message
+ 4. enters the connect method
+ 5. calls toUpperCase on the string msg
+ 6. returns to transmitB
+ 7. Returns to main
+
+----------------------------------------------------------------
