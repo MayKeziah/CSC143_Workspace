@@ -103,7 +103,7 @@ public class RectangleClient {
 		
 		for(int i = 0; i < list.size(); i++) {
 			System.out.print(list.get(i));
-			System.out.println("\t area: " + list.get(i).perimeter());
+			System.out.println("\t area: " + list.get(i).area());
 		}
 	}
 
