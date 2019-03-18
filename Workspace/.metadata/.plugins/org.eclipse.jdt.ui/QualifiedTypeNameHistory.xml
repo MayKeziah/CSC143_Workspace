@@ -4,7 +4,6 @@
 <fullyQualifiedTypeName name="plane.Line"/>
 <fullyQualifiedTypeName name="plane.Point"/>
 <fullyQualifiedTypeName name="numbers.Complex"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="exercise01.Drawable"/>
 <fullyQualifiedTypeName name="exercise01.Moveable"/>
 <fullyQualifiedTypeName name="exercise01.Writeable"/>
@@ -22,4 +21,5 @@
 <fullyQualifiedTypeName name="college.Rank"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="lists.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
