@@ -78,8 +78,8 @@ public class Query {
 			//Once you have an out of place right and left value, swap them. 
 			else {
 				T temp = list.get(left);
-				list.set(left, list.get(left));
-				list.set(left, temp);
+				list.set(left, list.get(right));
+				list.set(right, temp);
 				left++;
 				right--;
 			}

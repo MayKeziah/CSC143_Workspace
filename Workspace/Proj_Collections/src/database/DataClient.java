@@ -6,10 +6,10 @@ package database;
 import java.io.File;
 import java.io.IOException;
 
-//import college.Major;
-//import college.Rank;
+
 import college.Student;
 import lists.ArrayList;
+import utility.Query;
 
 /**
  * @author E
@@ -36,8 +36,12 @@ public class DataClient {
 				"College.txt");
 		DataStorage input = new DataStorage(file);
 		ArrayList<Student> database = input.read();
-		System.out.println(database.toString());
-		
+		System.out.println(database.toFile());
+//		Query.quickSort(database, 0, database.size() - 1);
+		Query.bubbleSort(database, Student::compareByGPA);
+		System.out.println("----------------------------------------");
+		System.out.println(database.toFile());
+
 	}
 
 }

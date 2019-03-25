@@ -6,7 +6,7 @@ public class Construction3Client {
 	 *  prints without a iterative loop line by line.
 	 * ******************************************************/
 	public static void print(Node front) {
-		System.out.println("---------- print( ) ----------");
+		System.out.println("---------- print() -----------");
 		System.out.print(front.data +" ");
 		System.out.print(front.next.data +" ");
 		System.out.print(front.next.next.data + " ");

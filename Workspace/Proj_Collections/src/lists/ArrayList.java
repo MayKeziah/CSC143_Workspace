@@ -247,6 +247,22 @@ public class ArrayList<T> implements List<T> {
 	public int size() {
 		return size;
 	}
+
+	/**
+	 * (accessor)
+	 * 
+	 * @return a string representation of the ArrayList in form: "[Obj0, Obj1, . . . , ObjSize-1]"
+	 * */
+	public String toFile() {
+		String toReturn = "";
+		if(size != 0) { // If the data-structure is empty, return "[]"
+			for (int i = 0; i < size - 2; i++) { 
+				toReturn += element[i] + "\n";
+			}
+			toReturn += element[size - 1];
+		}
+		return toReturn;
+	}
 	
 	/**
 	 * (accessor)
@@ -265,7 +281,7 @@ public class ArrayList<T> implements List<T> {
 	}
 	
 	/**
-	 * Private inner iterator
+	 * Private inner iterator: used to transverse the ArrayList
 	 * */
 	private class ArrayIterator implements Iterator<T>{
 		private int 	index;			//Current position in the list

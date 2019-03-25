@@ -3,6 +3,7 @@
  */
 package college;
 
+import utility.Comparable;
 /**
  * An stores information about a student.
  * Allows students to be compared by several factors including age, name, and GPA.
@@ -10,12 +11,12 @@ package college;
  * @version 1.0
  * @author E
  */
-public class Student {
-	private String name;
-	private int age;
-	private Rank rank; //Class Level
-	private Major major; //Area of study
-	private double gpa;
+public class Student implements Comparable<Student> {
+	final private String name;
+	final private int age;
+	final private Rank rank; //Class Level
+	final private Major major; //Area of study
+	final private double gpa;
 	
 	public Student(Builder builder) {
 		this.name 	= builder.name;

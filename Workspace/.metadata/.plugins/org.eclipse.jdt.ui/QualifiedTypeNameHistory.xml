@@ -22,4 +22,9 @@
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="lists.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="utility.Query"/>
+<fullyQualifiedTypeName name="utility.Comparable"/>
+<fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
+<fullyQualifiedTypeName name="links.LinkedList"/>
+<fullyQualifiedTypeName name="links.LinkedList.Node"/>
 </qualifiedTypeNameHistroy>
