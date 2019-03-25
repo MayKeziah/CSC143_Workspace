@@ -159,7 +159,8 @@ public class DataStorage {
 	public void write(ArrayList<Student> data) throws IOException{
 		PrintStream writer = new PrintStream(file);
 		for (int i = 0; i < data.size(); i++) {
-			writer.println(data.get(i).toString() + "\n");
+			writer.println(data.get(i).toString());
+			writer.println();
 		}
 		
 		writer.close();

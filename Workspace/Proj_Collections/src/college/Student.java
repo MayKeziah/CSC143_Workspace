@@ -26,6 +26,47 @@ public class Student implements Comparable<Student> {
 		this.gpa 	= builder.gpa;
 	}
 
+	public static class Builder{
+		private String 	name;
+		private int 	age;
+		private Rank 	rank;
+		private Major 	major;
+		private double 	gpa;
+		
+		public Builder() {
+			this.name 	= null;
+			this.age 	= 0;
+			this.rank 	= null;
+			this.major 	= null;
+			this.gpa 	= 0.0;
+		}
+		
+		public Builder setName(String name) {
+			this.name = name;
+			return this;
+		}
+		public Builder setAge(int age) {
+			this.age = age;
+			return this;
+		} 
+		public Builder setGPA(double gpa) {
+			this.gpa = gpa;
+			return this;
+		}
+		public Builder setRank(Rank rank) {
+			this.rank = rank;
+			return this;
+		}
+		public Builder setMajor(Major major) {
+			this.major = major;
+			return this;
+		}
+		public Student build() {
+			return new Student(this);
+		}
+		
+	} //END INNER CLASS
+
 	/**
 	 * @param s1 a student to compare.
 	 * @param s2 the student to compare to s1.
@@ -66,7 +107,11 @@ public class Student implements Comparable<Student> {
 	 * @return 1 if the student's last name is greater than the passed student, 0 is they are the same, and otherwise, -1.
 	 */
 	public int compareTo(Student stud) {
-		return getLastName().compareTo(stud.getLastName());
+		int lastName = getLastName().compareTo(stud.getLastName());
+		if (lastName == 0) {
+			return getFirstName().compareTo(stud.getFirstName());
+		}
+		return lastName;
 	}
 	
 	/**
@@ -210,47 +255,6 @@ public class Student implements Comparable<Student> {
 				"\nGPA:\t" + gpa +
 				"\nDeans List:\t" + isOnDeansList() + 
 				"\nOn Probation:\t" + isOnProbation(); 
-	}	
-
-	public static class Builder{
-		private String 	name;
-		private int 	age;
-		private Rank 	rank;
-		private Major 	major;
-		private double 	gpa;
-		
-		public Builder() {
-			this.name 	= null;
-			this.age 	= 0;
-			this.rank 	= null;
-			this.major 	= null;
-			this.gpa 	= 0.0;
-		}
-		
-		public Builder setName(String name) {
-			this.name = name;
-			return this;
-		}
-		public Builder setAge(int age) {
-			this.age = age;
-			return this;
-		} 
-		public Builder setGPA(double gpa) {
-			this.gpa = gpa;
-			return this;
-		}
-		public Builder setRank(Rank rank) {
-			this.rank = rank;
-			return this;
-		}
-		public Builder setMajor(Major major) {
-			this.major = major;
-			return this;
-		}
-		public Student build() {
-			return new Student(this);
-		}
-		
-	} //END INNER CLASS
+	}
 
 }
