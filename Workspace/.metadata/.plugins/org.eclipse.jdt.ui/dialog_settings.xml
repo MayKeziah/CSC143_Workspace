@@ -46,7 +46,7 @@
 	<section name="javadoc">
 		<item value="public" key="access"/>
 		<item value="false" key="noindex"/>
-		<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\Proj_IntArrayList\javadoc.xml" key="antpath"/>
+		<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L7_LinkedLab\javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="true" key="use"/>
 		<item value="false" key="author"/>
@@ -63,6 +63,36 @@
 		<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\JavaDocs" key="destdir"/>
 		<item value="true" key="openinbrowser"/>
 		<section name="projects">
+			<section name="L6_SortLab">
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L6_SortLab\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L6_SortLab\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="L5_SearchLab">
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L5_SearchLab\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L5_SearchLab\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="FromZybooks">
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\FromZybooks\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\FromZybooks\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="L8_FunctionalLab">
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L8_FunctionalLab\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L8_FunctionalLab\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="L7_LinkedLab">
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L7_LinkedLab\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\JavaDocs" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="L4_RecursionLab">
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L4_RecursionLab\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L4_RecursionLab\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
 			<section name="TestStuff">
 				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\TestStuff\javadoc.xml" key="antpath"/>
 				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\TestStuff\doc" key="destdir"/>
@@ -71,11 +101,6 @@
 			<section name="L4_RecursionB_Lab">
 				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L4_RecursionB_Lab\javadoc.xml" key="antpath"/>
 				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\JavaDocs" key="destdir"/>
-				<item value="" key="href"/>
-			</section>
-			<section name="L6_SortLab">
-				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L6_SortLab\javadoc.xml" key="antpath"/>
-				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L6_SortLab\doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 			<section name="Problem1">
@@ -93,9 +118,9 @@
 				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\JavaDocs" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
-			<section name="L5_SearchLab">
-				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L5_SearchLab\javadoc.xml" key="antpath"/>
-				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L5_SearchLab\doc" key="destdir"/>
+			<section name="Proj_Collections">
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\Proj_Collections\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\Proj_Collections\doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 			<section name="L3_ArrayLab">
@@ -108,19 +133,9 @@
 				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\JavaDocs" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
-			<section name="FromZybooks">
-				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\FromZybooks\javadoc.xml" key="antpath"/>
-				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\FromZybooks\doc" key="destdir"/>
-				<item value="" key="href"/>
-			</section>
 			<section name="L2_InterfaceLab">
 				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L2_InterfaceLab\javadoc.xml" key="antpath"/>
 				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L2_InterfaceLab\doc" key="destdir"/>
-				<item value="" key="href"/>
-			</section>
-			<section name="L4_RecursionLab">
-				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L4_RecursionLab\javadoc.xml" key="antpath"/>
-				<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L4_RecursionLab\doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 		</section>

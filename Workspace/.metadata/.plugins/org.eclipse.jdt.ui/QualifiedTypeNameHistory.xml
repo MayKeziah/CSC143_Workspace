@@ -12,19 +12,21 @@
 <fullyQualifiedTypeName name="version_01.IntArrayList"/>
 <fullyQualifiedTypeName name="utility.Iterator"/>
 <fullyQualifiedTypeName name="lists.List"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="college.Student.Builder"/>
-<fullyQualifiedTypeName name="college.Student"/>
-<fullyQualifiedTypeName name="college.Major"/>
-<fullyQualifiedTypeName name="college.Rank"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="lists.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="utility.Query"/>
 <fullyQualifiedTypeName name="utility.Comparable"/>
-<fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
 <fullyQualifiedTypeName name="links.LinkedList"/>
 <fullyQualifiedTypeName name="links.LinkedList.Node"/>
+<fullyQualifiedTypeName name="links.Iterator"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
+<fullyQualifiedTypeName name="college.Student"/>
+<fullyQualifiedTypeName name="college.Major"/>
+<fullyQualifiedTypeName name="college.Rank"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
