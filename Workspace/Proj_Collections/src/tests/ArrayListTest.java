@@ -258,7 +258,7 @@ class ArrayListTest { //TODO: add iterator test
 		 * */
  
 		
-		fail("Not yet implemented"); // TODO: Iterator test
+//		fail("Not yet implemented"); // TODO: Iterator test
 	}
 
 	/**

@@ -46,7 +46,7 @@
 	<section name="javadoc">
 		<item value="public" key="access"/>
 		<item value="false" key="noindex"/>
-		<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L7_LinkedLab\javadoc.xml" key="antpath"/>
+		<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L2_InterfaceLab\javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="true" key="use"/>
 		<item value="false" key="author"/>
@@ -60,7 +60,7 @@
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\JavaDocs" key="destdir"/>
+		<item value="C:\Users\E\Documents\School\Winter 2019\CSC143\W19\Labs\Workspace\L2_InterfaceLab\doc" key="destdir"/>
 		<item value="true" key="openinbrowser"/>
 		<section name="projects">
 			<section name="L6_SortLab">
